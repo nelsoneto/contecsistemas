@@ -1,14 +1,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import whatsAppImg from '../../../public/images/WhatsApp.png'
+import whatsAppImg from '../../../public/images/whatsapp.svg'
 import { DownloadContents } from './DownloadContents'
 import { PagePerguntas } from './PagePerguntas'
 
 export default function SuportPage() {
   return (
     <div className="mx-auto max-h-max w-full text-slate-300">
-      <div className="mt-12 flex h-full w-full items-center justify-center gap-4 bg-gradient-to-r from-blue-900 via-sky-700 to-blue-900 py-4">
-        <h1 className="bg-gradient-to-r from-cyan-300 via-sky-400 to-blue-300 bg-clip-text px-1 font-alt text-2xl text-transparent xl:text-4xl">
+      <div className="mt-14 flex h-full w-full items-center justify-center gap-4 bg-gradient-to-r from-blue-900 via-sky-700 to-blue-900 py-4">
+        <h1 className="bg-gradient-to-r from-cyan-300 via-sky-400 to-blue-300 bg-clip-text px-1 font-alt text-2xl text-transparent xl:text-5xl">
           Suporte técnico
         </h1>
         <Link
@@ -24,7 +24,7 @@ export default function SuportPage() {
           />
           (69)99970-5453
         </Link>
-        <a href="" className="hidden xl:flex">
+        <a href="" className="hidden xl:flex xl:text-3xl">
           (69)3535-6826
         </a>
       </div>
