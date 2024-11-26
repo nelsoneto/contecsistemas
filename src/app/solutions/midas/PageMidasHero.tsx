@@ -2,7 +2,7 @@ export function PageMidasHero() {
   return (
     <>
       <div className="flex w-auto flex-col space-y-8 bg-slate-800 py-4 xl:px-72">
-        <div className="justify-centerp flex flex-col items-center px-4 py-4 xl:px-10">
+        <div className="flex flex-col items-center justify-center px-4 py-4 xl:px-10">
           <h2 className="mt-6 font-alt text-3xl xl:text-4xl">
             Conheça as características técnicas do{' '}
             <span className="text-blue-400">MIDAS</span>
@@ -24,21 +24,21 @@ export function PageMidasHero() {
               </li>{' '}
               <p className="mb-5 px-4">
                 Cadastro, controle, histórico, movimentação, condicional,
-                importação do XML na entrada, com cadastramento automático do
+                importação do XML na entrada, com cadastro automático do
                 produto, controle de unidades.
               </p>
               <li className="px-4 font-alt uppercase text-blue-400 xl:px-0">
                 Cadastros
               </li>
               <p className="mb-5 px-4">
-                Clientes, fornecedores, funcionários, convênios, contas e
+                Clientes, fornecedores, funcionários, convenios, contas e
                 bancos.
               </p>
               <li className="px-4 font-alt uppercase text-blue-400 xl:px-0">
                 Fiscal
               </li>
               <p className="mb-5 px-4">
-                Emissão Nota Fiscal Eletrônica, EFD IMCS/IPI (SPED Fiscal) e EFD
+                Emissão Nota Fiscal Eletronica, EFD ICMS/IPI (SPED Fiscal) e EFD
                 Contribuições, CT-e, CC-e, NFC-e, MDF-e.
               </p>
               <li className="px-4 font-alt uppercase text-blue-400 xl:px-0">
@@ -89,7 +89,7 @@ export function PageMidasHero() {
                 Atualização
               </li>
               <p className="mb-5 px-4">
-                Sistema atualizado com as últimas exigências relacioadas a
+                Sistema atualizado com as últimas exigências relacionadas a
                 emissão de NF-e e NFC-e.
               </p>
             </ul>

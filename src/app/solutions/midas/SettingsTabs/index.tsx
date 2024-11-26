@@ -229,6 +229,7 @@ export function SettingsTabs() {
                 <li>Integração com TEF</li>
                 <li>Integração com balança e gaveta</li>
                 <li>Emissão de vale troco</li>
+                <li>Pagamento com QR-Code PIX</li>
               </ul>
             </div>
             <div className="flex size-auto w-full justify-end px-10">
@@ -245,7 +246,7 @@ export function SettingsTabs() {
           value="tab6"
         >
           <span className="bg-gradient-to-r from-blue-400 via-sky-400 to-emerald-300 bg-clip-text px-1 font-alt text-2xl text-transparent sm:text-3xl">
-            Nota Fiscal Eletrônica
+            Nota Fiscal Eletronica
           </span>
           <div className="grid gap-10 py-10 xl:grid-cols-2 xl:px-32">
             <div className="flex items-center justify-center px-10">
@@ -257,7 +258,7 @@ export function SettingsTabs() {
                 <li>Autorização NFC-e pendentes</li>
                 <li>Cancelamento de NF-e simplificado</li>
                 <li>Emissão de CC-e simplificado</li>
-                <li>Informaçãos complementares</li>
+                <li>Informações complementares</li>
                 <li>Visualização do espelho da nota</li>
               </ul>
             </div>
@@ -282,7 +283,7 @@ export function SettingsTabs() {
               <ul className="list-inside list-disc text-base md:text-xl">
                 <li>Emissão de NFS-e simplificado</li>
                 <li>Configuração de tributação e retenção</li>
-                <li>Integração com portal municipio</li>
+                <li>Integração com portal municipal</li>
                 <li>Cancelamento de NFS-e simplificado</li>
               </ul>
             </div>
@@ -300,7 +301,7 @@ export function SettingsTabs() {
           value="tab8"
         >
           <span className="bg-gradient-to-r from-blue-400 via-sky-400 to-emerald-300 bg-clip-text px-1 font-alt text-2xl text-transparent sm:text-3xl">
-            Cetral de Caixa
+            Central de Caixa
           </span>
           <div className="grid gap-10 py-10 xl:grid-cols-2 xl:px-32">
             <div className="flex items-center justify-center px-10">
@@ -308,9 +309,9 @@ export function SettingsTabs() {
                 <li>Fechamento de pedido pre-venda e orçamento</li>
                 <li>Lançamento de sangria e suprimento</li>
                 <li>Emissão de NFC-e e NF-e</li>
-                <li>Fechamento e reabrimento de caixa</li>
+                <li>Fechamento e abrimento de caixa</li>
                 <li>Movimentação de estoque</li>
-                <li>Movimentação financeiro</li>
+                <li>Movimentação financeira</li>
               </ul>
             </div>
             <div className="flex size-auto w-full justify-end px-10">
@@ -337,7 +338,7 @@ export function SettingsTabs() {
                 <li>Manifestar NF-e</li>
                 <li>Conversor de unidade</li>
                 <li>Atualização de custo e preço de venda</li>
-                <li>Movimentação financeiro</li>
+                <li>Movimentação financeira</li>
                 <li>Movimentação de estoque</li>
                 <li>ICMS-ST</li>
               </ul>
