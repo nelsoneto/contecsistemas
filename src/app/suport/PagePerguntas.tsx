@@ -25,7 +25,7 @@ export function PagePerguntas() {
         <div className="w-[500px] font-alt text-xl">
           <Disclosure>
             <DisclosureButton className="group flex w-full items-center justify-between py-2 text-start">
-              É preciso de internet para usar o sistema MIDAS?
+              Preciso de internet para usar o sistema MIDAS?
               <ChevronDown className="w-8 text-blue-400 group-data-[open]:rotate-180" />
             </DisclosureButton>
             <DisclosurePanel
@@ -46,7 +46,7 @@ export function PagePerguntas() {
               className="flex origin-top px-2 pb-4 text-start font-sans text-blue-400 transition duration-200 ease-out data-[closed]:-translate-y-1 data-[closed]:opacity-0"
             >
               Não. O MIDAS PDV vem integrado com a instalação do proprio MIDAS,
-              entre em contato conosco para configurar.
+              entre em contacto para configurar.
             </DisclosurePanel>
           </Disclosure>
           <Disclosure>
@@ -63,7 +63,7 @@ export function PagePerguntas() {
           </Disclosure>
           <Disclosure>
             <DisclosureButton className="group flex w-full items-center justify-between gap-4 py-2 text-start">
-              Quais são os tipos de Notas o MIDAS faz?
+              Quais são os tipos de Notas que o MIDAS faz?
               <ChevronDown className="w-8 text-blue-400 group-data-[open]:rotate-180" />
             </DisclosureButton>
             <DisclosurePanel

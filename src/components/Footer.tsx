@@ -38,7 +38,7 @@ export function Footer() {
         </div>
         <div className="flex flex-col gap-2">
           <span className="font-alt text-blue-400">Seguimentos</span>
-          <a href="/solutions/midas">Lojas de confecções</a>
+          <a href="/solutions/midas">Confecções</a>
           <a href="/solutions/midas">Supermercados</a>
           <a href="/solutions/midas">Panificadoras</a>
           <a href="/solutions/midas">Oficinas</a>
