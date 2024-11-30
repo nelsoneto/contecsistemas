@@ -17,7 +17,7 @@ export function Footer() {
               target="_blank"
               className="text-sm"
             >
-              (69)99970-5457 - Suporte
+              (69)99970-5453 - Suporte
             </a>
           </span>
           <span className="flex-1 items-center gap-4 md:flex">

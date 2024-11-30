@@ -7,7 +7,7 @@ export default function PageMidas() {
     <div className="mx-auto max-h-max w-full text-slate-300">
       <PageMidasHeader />
       <PageMidasHero />
-      {/* <PageMidasBody /> */}
+
       <SettingsTabs />
     </div>
   )

@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "next build && pm2 restart site"
+    "deploy": "git pull origin main && npm install && next build && pm2 restart contec-site"
   },
   "dependencies": {
     "@headlessui/react": "^2.1.8",
