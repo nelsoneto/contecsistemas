@@ -6,8 +6,8 @@ export function Header() {
         <div className="items-center justify-center gap-10 text-balance rounded-lg">
           <div className="w-auto rounded-md text-center font-alt text-4xl md:text-start md:text-5xl xl:py-28 xl:text-6xl">
             <h1 className="text-sky-500 xl:text-sky-500">
-              <span className="">Transforme</span> sua gestão com nossas
-              soluções que impulsionam resultados e eficiência.
+              <span className="">Transforme</span> sua gestão com nosso Sistema
+              Inteligente.
             </h1>
           </div>
         </div>
