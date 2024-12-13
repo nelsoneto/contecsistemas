@@ -8,10 +8,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        'overlay-dark': 'rgba(0, 0, 0, 0.5)',
+      },
       backgroundImage: {
         bannerImg: 'url(/images/freepik-woman-bus.jpg)',
         pattern: 'url(/images/bg.png)',
-        stars: 'url(/images/smart-technology.jpg)',
+        maleImg: 'url(/images/happy-young-asian-businesswoman2.jpg)',
         midas: 'url(/images/Midas-menu.png)',
       },
       fontFamily: {

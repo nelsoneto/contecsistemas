@@ -10,7 +10,7 @@ import img2 from '../../../public/images/perguntas.jpg'
 
 export function PagePerguntas() {
   return (
-    <>
+    <div className="">
       <h2 className="flex justify-center bg-slate-800 pt-14 font-alt text-2xl text-blue-400 md:text-3xl">
         Perguntas Frequentes:
       </h2>
@@ -22,7 +22,7 @@ export function PagePerguntas() {
             className="relative hidden h-96 w-96 rounded-md border-8 border-slate-400 object-cover md:flex"
           />
         </div>
-        <div className="w-[500px] font-alt text-xl">
+        <div className="pl-6 font-alt text-base xl:text-xl">
           <Disclosure>
             <DisclosureButton className="group flex w-full items-center justify-between py-2 text-start">
               Preciso de internet para usar o sistema MIDAS?
@@ -75,6 +75,6 @@ export function PagePerguntas() {
           </Disclosure>
         </div>
       </div>
-    </>
+    </div>
   )
 }
