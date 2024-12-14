@@ -14,7 +14,7 @@ const config: Config = {
       backgroundImage: {
         bannerImg: 'url(/images/freepik-woman-bus.jpg)',
         pattern: 'url(/images/bg.png)',
-        maleImg: 'url(/images/happy-young-asian-businesswoman2.jpg)',
+        maleImg: 'url(/images/happy-young-asian-businesswoman5.jpg)',
         midas: 'url(/images/Midas-menu.png)',
       },
       fontFamily: {
