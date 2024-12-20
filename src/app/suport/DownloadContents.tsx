@@ -8,7 +8,7 @@ export function DownloadContents() {
   return (
     <>
       <div className="flex flex-col items-center justify-center py-10 text-2xl">
-        <h1 className="font-alt text-xl xl:text-3xl">Downloads Importantes:</h1>
+        <h1 className="font-alt text-xl xl:text-3xl">Downloads Importantes</h1>
         <div className="grid gap-8 py-10 sm:grid-cols-2 xl:grid-cols-4">
           <div className="flex h-60 w-auto flex-col gap-4 rounded-lg bg-slate-100 p-4 text-blue-500 shadow-sm shadow-blue-300 outline outline-offset-2">
             <span className="flex justify-center font-alt">Acesso Remoto</span>
