@@ -46,7 +46,7 @@ export function Navbar() {
             <li key={link.id} className="my-7 md:my-0 md:ml-8">
               <a
                 href={link.link}
-                className="flex w-full rounded-md border border-transparent px-3 py-2 text-zinc-100 transition-colors hover:bg-slate-800 focus:border-blue-500 focus:outline-none"
+                className="flex w-full rounded-md border border-transparent px-4 py-2 text-zinc-100 transition-colors hover:bg-slate-800 focus:border-blue-500 focus:outline-none"
               >
                 {link.name}
               </a>

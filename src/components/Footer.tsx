@@ -2,7 +2,7 @@ import { Mail, MapPin, Phone } from 'lucide-react'
 export function Footer() {
   return (
     <div className="absolute max-h-full w-full">
-      <div className="grid grid-cols-1 gap-8 bg-slate-950 px-8 py-16 xl:grid-cols-3 xl:justify-items-center xl:px-24 xl:py-32">
+      <div className="grid grid-cols-1 gap-8 bg-slate-950 px-4 py-16 xl:grid-cols-3 xl:justify-items-center xl:px-24 xl:py-32">
         <div className="flex flex-col gap-3">
           <h1 className="font-alt text-blue-400">Contato</h1>
           <span className="flex-1 items-center gap-4 md:flex">

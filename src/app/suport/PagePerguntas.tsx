@@ -23,7 +23,7 @@ export function PagePerguntas() {
           />
         </div>
 
-        <div className="w-full px-8 font-alt sm:text-xl xl:mr-32 xl:px-0">
+        <div className="w-full pl-4 pr-4 font-alt sm:text-xl xl:pr-36">
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
               <AccordionTrigger>
