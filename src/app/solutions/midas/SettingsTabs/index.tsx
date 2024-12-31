@@ -6,7 +6,7 @@ import { TabData } from './tabData'
 import { TabItem } from './TabItem'
 
 export function SettingsTabs() {
-  const [currentTab, setCurrentTab] = useState('tab1')
+  const [currentTab, setCurrentTab] = useState('null')
   const tabRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
 
   useEffect(() => {
