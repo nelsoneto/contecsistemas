@@ -18,15 +18,28 @@ export function Navbar() {
     <div className="fixed left-0 top-0 z-50 w-full font-alt shadow-md">
       <div className="items-center justify-between bg-slate-900 px-8 py-2 md:flex 2xl:px-64">
         {/* logo section */}
-        <Link href="/" className="flex cursor-pointer items-center gap-1 text-2xl font-bold">
-          <Image src="/images/logo.svg" alt="Contec Sistemas" width={32} height={32} />
+        <Link
+          href="/"
+          className="flex cursor-pointer items-center gap-1 text-2xl font-bold"
+        >
+          <Image
+            src="/images/logo.svg"
+            alt="Contec Sistemas"
+            width={32}
+            height={32}
+          />
           <span className="max-w-0 overflow-hidden text-nowrap px-2 text-xl lg:max-w-56">
-            <span className="pl-12 text-slate-200 lg:pl-0">CONTEC SISTEMAS</span>
+            <span className="pl-12 text-slate-200 lg:pl-0">
+              CONTEC SISTEMAS
+            </span>
           </span>
         </Link>
 
         {/* Menu icon */}
-        <div onClick={() => setOpen(!open)} className="absolute right-8 top-3 h-7 w-7 cursor-pointer md:hidden">
+        <div
+          onClick={() => setOpen(!open)}
+          className="absolute right-8 top-3 h-7 w-7 cursor-pointer md:hidden"
+        >
           {open ? <X /> : <Menu />}
         </div>
         {/* linke items */}
@@ -53,5 +66,5 @@ export function Navbar() {
         {/* button */}
       </div>
     </div>
-  );
+  )
 }
