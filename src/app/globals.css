@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Adicione este CSS ao seu arquivo de estilos */
+@media (max-width: 768px) {
+  .tabs-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tabs-content {
+    margin-top: 1rem;
+  }
+}
+
 body {
   @apply bg-slate-950 text-zinc-100
 }

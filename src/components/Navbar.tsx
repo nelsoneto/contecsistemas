@@ -5,7 +5,6 @@ import { useState } from 'react'
 import { Dropdown } from '@/components/Dropdown'
 import Image from 'next/image'
 import Link from 'next/link'
-import contecLogo from '../../public/images/logo.svg'
 
 export function Navbar() {
   const Links = [
@@ -23,7 +22,12 @@ export function Navbar() {
           href="/"
           className="flex cursor-pointer items-center gap-1 text-2xl font-bold"
         >
-          <Image src={contecLogo} alt="Contec Sistemas" className="h-8 w-8" />
+          <Image
+            src="/images/logo.svg"
+            alt="Contec Sistemas"
+            width={32}
+            height={32}
+          />
           <span className="max-w-0 overflow-hidden text-nowrap px-2 text-xl lg:max-w-56">
             <span className="pl-12 text-slate-200 lg:pl-0">
               CONTEC SISTEMAS
