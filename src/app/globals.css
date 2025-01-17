@@ -17,3 +17,23 @@
 body {
   @apply bg-slate-950 text-zinc-100
 }
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  @apply border-t-blue-500;
+  animation: spin 1s linear infinite;
+}

@@ -1,10 +1,10 @@
 import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-} from '@headlessui/react'
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion'
 
-import { ChevronDown } from 'lucide-react'
 import Image from 'next/image'
 import perguntasImg from '../../../public/images/perguntas2.jpg'
 
@@ -23,56 +23,43 @@ export function PagePerguntas() {
           />
         </div>
         <div className="w-auto px-8 font-alt sm:text-xl xl:mr-32 xl:px-0">
-          <Disclosure>
-            <DisclosureButton className="group flex w-full items-center justify-between py-2 text-start">
-              Preciso de internet para usar o sistema MIDAS?
-              <ChevronDown className="w-8 text-blue-400 group-data-[open]:rotate-180" />
-            </DisclosureButton>
-            <DisclosurePanel
-              transition
-              className="flex w-full origin-top px-2 pb-4 text-start font-sans text-blue-400 transition duration-200 ease-out data-[closed]:-translate-y-1 data-[closed]:opacity-0"
-            >
-              Não. O MIDAS não é um sistema on-line. Internet seria necessário
-              apenas para emissão de Notas.
-            </DisclosurePanel>
-          </Disclosure>
-          <Disclosure>
-            <DisclosureButton className="group flex w-full items-center justify-between gap-4 py-2 text-start">
-              O MIDAS PDV é um produto separado?
-              <ChevronDown className="w-8 text-blue-400 group-data-[open]:rotate-180" />
-            </DisclosureButton>
-            <DisclosurePanel
-              transition
-              className="text-wrap px-2 pb-4 font-sans text-blue-400 transition duration-200 ease-out data-[closed]:-translate-y-1 data-[closed]:opacity-0"
-            >
-              Não. O MIDAS PDV vem integrado com a instalação do proprio MIDAS,
-              entre em contacto para configurar.
-            </DisclosurePanel>
-          </Disclosure>
-          <Disclosure>
-            <DisclosureButton className="group flex w-full items-center justify-between gap-4 py-2 text-start">
-              O suporte local tem que ser agendado?
-              <ChevronDown className="w-8 text-blue-400 group-data-[open]:rotate-180" />
-            </DisclosureButton>
-            <DisclosurePanel
-              transition
-              className="flex w-full origin-top px-2 pb-4 text-start font-sans text-blue-400 transition duration-200 ease-out data-[closed]:-translate-y-1 data-[closed]:opacity-0"
-            >
-              Sim. Pedimos para agendar com 1 dia de antecedencia.
-            </DisclosurePanel>
-          </Disclosure>
-          <Disclosure>
-            <DisclosureButton className="group flex w-full items-center justify-between gap-4 py-2 text-start">
-              Quais são os tipos de Notas que o MIDAS faz?
-              <ChevronDown className="w-8 text-blue-400 group-data-[open]:rotate-180" />
-            </DisclosureButton>
-            <DisclosurePanel
-              transition
-              className="flex w-full origin-top px-2 pb-4 text-start font-sans text-blue-400 transition duration-200 ease-out data-[closed]:-translate-y-1 data-[closed]:opacity-0"
-            >
-              O MIDAS gera e transmite notas, NF-e, NFC-e, MDF-e, CT-e, NFS-e.
-            </DisclosurePanel>
-          </Disclosure>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger className="text-blue-400">
+                Preciso de internet para usar o sistema MIDAS?
+              </AccordionTrigger>
+              <AccordionContent>
+                Não. O MIDAS não é um sistema on-line. Internet seria necessário
+                apenas para emissão de Notas.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger className="text-blue-400">
+                O MIDAS PDV é um produto separado?
+              </AccordionTrigger>
+              <AccordionContent>
+                Não. O MIDAS PDV vem integrado com a instalação do proprio
+                MIDAS, entre em contacto para configurar.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger className="text-blue-400">
+                O suporte local é cobrado?
+              </AccordionTrigger>
+              <AccordionContent>
+                Não. O suporte local esta incluso na mensalidade, mas pedimos
+                para agendar com 1 dia de antecedencia.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-4">
+              <AccordionTrigger className="text-blue-400">
+                Quais são os tipos de Notas que o MIDAS faz?
+              </AccordionTrigger>
+              <AccordionContent>
+                O MIDAS gera e transmite notas, NF-e, NFC-e, MDF-e, CT-e, NFS-e.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </div>
     </div>
