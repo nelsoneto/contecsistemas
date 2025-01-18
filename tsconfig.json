@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "types": [
+      "@types/next"
+    ],
     "lib": [
       "dom",
       "dom.iterable",

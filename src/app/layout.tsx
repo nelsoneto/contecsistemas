@@ -1,7 +1,6 @@
+import ConditionalNavbar from '@/components/ConditionalNavbar'
 import { Footer } from '@/components/Footer'
-import { Navbar } from '@/components/Navbar'
 import { Widget } from '@/components/Widget'
-import type { Metadata } from 'next'
 import {
   Bai_Jamjuree as BaiJamjuree,
   Roboto_Flex as Roboto,
@@ -16,11 +15,6 @@ const baiJamjuree = BaiJamjuree({
   variable: '--font-bai-jamjuree',
 })
 
-export const metadata: Metadata = {
-  title: 'Contec Sistemas',
-  description: 'O solução completa para sua empresa.',
-}
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -30,8 +24,7 @@ export default function RootLayout({
     <html lang="en" className="antialiased">
       <body className={`${roboto.variable} ${baiJamjuree.variable} font-sans`}>
         <main className="">
-          <Navbar />
-          {/* <Slider /> */}
+          <ConditionalNavbar />
           {children}
           <Widget />
           <Footer />

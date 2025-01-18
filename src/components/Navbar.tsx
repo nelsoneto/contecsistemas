@@ -9,7 +9,7 @@ import Link from 'next/link'
 export function Navbar() {
   const Links = [
     { id: 1, name: 'Inicio', link: '/' },
-    { id: 2, name: 'Blog', link: '/' },
+    { id: 2, name: 'Blog', link: '/blog' },
     { id: 3, name: 'Suporte', link: '/suport' },
   ]
   const [open, setOpen] = useState(false)
