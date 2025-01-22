@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import NavbarBlog from './NavbarBlog'
+import { NavbarBlog } from './NavbarBlog'
 
 export default function BlogLayout({
   children,

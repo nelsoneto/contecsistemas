@@ -16,7 +16,7 @@ export function Navbar() {
 
   return (
     <div className="fixed left-0 top-0 z-50 w-full font-alt shadow-md">
-      <div className="items-center justify-between bg-slate-900 px-8 py-2 md:flex 2xl:px-64">
+      <div className="h-20 items-center justify-between bg-slate-900 px-8 py-4 md:flex 2xl:px-64">
         {/* logo section */}
         <Link
           href="/"
@@ -38,7 +38,7 @@ export function Navbar() {
         {/* Menu icon */}
         <div
           onClick={() => setOpen(!open)}
-          className="absolute right-8 top-3 h-7 w-7 cursor-pointer md:hidden"
+          className="absolute right-8 top-3 h-7 w-7 cursor-pointer py-4 md:hidden"
         >
           {open ? <X /> : <Menu />}
         </div>

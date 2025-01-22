@@ -11,6 +11,7 @@ import { ClipLoader } from 'react-spinners'
 
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
+import { CalendarIcon } from 'lucide-react'
 import Post from './interfaces/post'
 
 type Props = {
@@ -60,9 +61,23 @@ export default function HeroCarousel({ posts }: Props) {
                     <h2 className="text-start text-4xl font-bold tracking-tight text-slate-50">
                       {post.fields.title}
                     </h2>
-                    <p className="text-start text-slate-50">
+                    <p className="text-start text-slate-300">
                       {post.fields.description}
                     </p>
+                    <div className="flex items-center gap-2">
+                      <CalendarIcon className="h-4 w-4 text-slate-300" />
+                      <p className="text-slate-300">
+                        {new Date(post.sys.createdAt).toLocaleDateString(
+                          'pt-BR',
+                          {
+                            weekday: 'long',
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric',
+                          },
+                        )}
+                      </p>
+                    </div>
                   </CardContent>
                 </Card>
               </Link>

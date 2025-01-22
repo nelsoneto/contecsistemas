@@ -1,19 +1,63 @@
-import { Button } from '@/components/ui/button'
+'use client'
+import { Menu, X } from 'lucide-react'
+import { useState } from 'react'
+
+import Image from 'next/image'
 import Link from 'next/link'
 
-export default function NavbarBlog() {
+export function NavbarBlog() {
+  const Links = [
+    { id: 1, name: 'Noticias', link: '/blog/news' },
+    { id: 2, name: 'Categoria', link: '/blog' },
+  ]
+  const [open, setOpen] = useState(false)
+
   return (
-    <nav className="fixed left-0 top-0 z-50 w-full bg-slate-800 shadow-md">
-      {/* Conteúdo da NavbarBlog */}
-      <div className="flex items-center gap-x-4 p-4 px-60">
-        <Link href="/blog">
-          <h1 className="text-white">LOGO</h1>
+    <div className="fixed left-0 top-0 z-50 w-full font-alt shadow-md">
+      <div className="h-20 items-center justify-between bg-slate-900 px-8 py-4 md:flex 2xl:px-64">
+        {/* logo section */}
+        <Link
+          href="/blog"
+          className="flex cursor-pointer items-center gap-1 text-2xl font-bold"
+        >
+          <Image
+            src="/images/logo.svg"
+            alt="Contec Sistemas"
+            width={32}
+            height={32}
+          />
+          <div className="max-w-0 overflow-hidden text-nowrap px-2 text-lg lg:max-w-72">
+            <h1 className="pl-12 text-slate-200 lg:pl-0">
+              CONTEC SISTEMAS <span className="text-blue-500">|</span>{' '}
+              <span className="font-alt">BLOG</span>
+            </h1>
+          </div>
         </Link>
-        <Link href="/blog/news" passHref>
-          <Button variant="default">Novidades</Button>
-        </Link>
-        <h1>Esta Pagina esta em Desenvolvimento.</h1>
+
+        {/* Menu icon */}
+        <div
+          onClick={() => setOpen(!open)}
+          className="absolute right-8 top-3 h-7 w-7 cursor-pointer py-4 md:hidden"
+        >
+          {open ? <X /> : <Menu />}
+        </div>
+        {/* linke items */}
+        <ul
+          className={`absolute left-0 z-[-1] w-full bg-slate-900 pb-12 pl-5 transition-all duration-500 ease-linear md:static md:z-auto md:flex md:w-auto md:items-center md:pb-0 md:pl-0 ${open ? 'top-12' : 'top-[-490px]'}`}
+        >
+          {Links.map((link) => (
+            <li key={link.id} className="my-7 md:my-0 md:ml-8">
+              <a
+                href={link.link}
+                className="flex w-full rounded-md border border-transparent px-3 py-2 text-zinc-100 transition-colors hover:bg-slate-800 focus:border-blue-500 focus:outline-none"
+              >
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+        {/* button */}
       </div>
-    </nav>
+    </div>
   )
 }
