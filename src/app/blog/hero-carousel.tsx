@@ -9,10 +9,11 @@ import Autoplay from 'embla-carousel-autoplay'
 import Link from 'next/link'
 import { ClipLoader } from 'react-spinners'
 
+import { Post } from '@/app/blog/interfaces/post'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
 import { CalendarIcon } from 'lucide-react'
-import Post from './interfaces/post'
+import { Key } from 'react'
 
 type Props = {
   posts: Post[]
@@ -42,7 +43,7 @@ export default function HeroCarousel({ posts }: Props) {
               className="transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-400"
               key={post.fields.title}
             >
-              <Link href={`/news${post.fields.slug}`}>
+              <Link href={`/blog/news/${post.fields.slug}`}>
                 <Card className="relative h-[36rem] w-full rounded-lg border-none shadow-xl shadow-blue-400">
                   <div
                     className={`absolute h-full w-full rounded-lg bg-cover bg-center brightness-50 filter`}
@@ -52,9 +53,11 @@ export default function HeroCarousel({ posts }: Props) {
                   ></div>
                   <CardContent className="relative z-10 flex min-h-screen flex-col items-start justify-center gap-y-4">
                     <div className="flex gap-2">
-                      {post.fields.tags.map((tag) => (
+                      {post.fields.tags.map((tag: Key | null | undefined) => (
                         <Badge key={tag} className="">
-                          {tag.charAt(0).toUpperCase() + tag.slice(1)}
+                          {typeof tag === 'string'
+                            ? tag.charAt(0).toUpperCase() + tag.slice(1)
+                            : tag}
                         </Badge>
                       ))}
                     </div>

@@ -1,8 +1,10 @@
+/* eslint-disable prettier/prettier */
 'use client'
+import { Post } from '@/app/blog/interfaces/post'
+import { Document } from '@contentful/rich-text-types'
 import { createClient } from 'contentful'
 import { useEffect, useState } from 'react'
 import HeroCarousel from './hero-carousel'
-import Post from './interfaces/post'
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID as string,
@@ -14,13 +16,13 @@ export default function BlogPage() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await client.getEntries<Post>({
+      const response = await client.getEntries({
         content_type: 'blog',
       })
 
       const postsData: Post[] = await Promise.all(
         response.items.map(async (item): Promise<Post> => {
-          let imageUrl: string | null = null
+          let imageUrl: string | undefined
           if (item.fields.image) {
             try {
               const asset = await client.getAsset(
@@ -37,12 +39,29 @@ export default function BlogPage() {
             }
           }
           return {
-            contentTypeId: 'blog',
             sys: {
               ...item.sys,
+              contentTypeId: 'blog',
             },
             fields: {
-              ...item.fields,
+              tags: Array.isArray(item.fields.tags)
+                ? (item.fields.tags.filter(
+                  (tag) => typeof tag === 'string',
+                ) as string[])
+                : [],
+              title:
+                typeof item.fields.title === 'string' ? item.fields.title : '',
+              body: item.fields.body as Document,
+              slug:
+                typeof item.fields.slug === 'string' ? item.fields.slug : '',
+              description:
+                typeof item.fields.description === 'string'
+                  ? item.fields.description
+                  : '',
+              image: item.fields.image as {
+                sys: { type: string; linkType: string; id: string }
+                fields: { title: string; file: { url: string } }
+              } | null,
               imageUrl,
             },
           }

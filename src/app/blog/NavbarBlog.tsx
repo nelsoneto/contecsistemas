@@ -14,7 +14,7 @@ export function NavbarBlog() {
 
   return (
     <div className="fixed left-0 top-0 z-50 w-full font-alt shadow-md">
-      <div className="h-20 items-center justify-between bg-slate-900 px-8 py-4 md:flex 2xl:px-64">
+      <div className="h-20 items-center justify-between bg-slate-900 px-8 py-4 md:flex xl:px-60 2xl:px-64">
         {/* logo section */}
         <Link
           href="/blog"

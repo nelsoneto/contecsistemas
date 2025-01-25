@@ -1,12 +1,11 @@
 import { Document } from '@contentful/rich-text-types'
-import { EntrySkeletonType } from 'contentful'
 
-interface Post extends EntrySkeletonType {
+export interface Post {
   sys: {
     id: string
     createdAt: string
+    contentTypeId: 'blog'
   }
-  contentTypeId: string
   fields: {
     tags: string[]
     title: string
@@ -19,7 +18,6 @@ interface Post extends EntrySkeletonType {
         linkType: string
         id: string
       }
-
       fields: {
         title: string
         file: {
@@ -27,7 +25,6 @@ interface Post extends EntrySkeletonType {
         }
       }
     } | null
-    imageUrl?: string | null
+    imageUrl?: string
   }
 }
-export default Post
