@@ -4,7 +4,7 @@ import heroImg from '../../public/images/responsive-contec.svg'
 
 export function Hero() {
   return (
-    <section className="bg-slate-800 px-4 py-8 xl:px-60 xl:py-16">
+    <section className="bg-slate-800 px-4 py-8 md:px-24 lg:px-44 xl:px-64 xl:py-16 2xl:px-64">
       <div className="grid w-full items-center justify-between gap-12 rounded-lg px-4 py-4 lg:grid-cols-2">
         <div className="flex flex-col gap-4 rounded-lg text-left lg:text-pretty xl:gap-8">
           <h1 className="font-baijamjuree-bold rounded-md text-2xl text-zinc-300 md:text-3xl lg:text-3xl">

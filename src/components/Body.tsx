@@ -15,7 +15,7 @@ export function Body() {
   return (
     <div className="h-auto">
       <div className="h-auto bg-slate-900 text-zinc-300">
-        <div className="flex h-full w-full flex-col items-center space-y-2 bg-pattern bg-center bg-no-repeat px-4 py-8 xl:px-60 xl:py-10">
+        <div className="flex h-full w-full flex-col items-center space-y-2 bg-pattern bg-center bg-no-repeat px-4 py-8 md:px-24 lg:px-44 xl:px-64 xl:py-10 2xl:px-64">
           <div className="flex flex-col gap-10 text-center font-alt md:px-10">
             <h1 className="text-2xl md:text-5xl">
               Conheça nosso software e as soluções que oferecemos em diversos
@@ -86,13 +86,13 @@ export function Body() {
           </div>
         </div>
       </div>
-      <div className="gap-10 bg-gradient-to-r from-blue-950 via-blue-800 to-blue-950 text-center text-zinc-300">
-        <div className="grid h-auto w-full grid-cols-1 justify-items-center gap-14 p-20 xl:grid-cols-3 xl:gap-8 xl:p-36">
+      <div className="gap-10 bg-gradient-to-r from-blue-950 via-blue-800 to-blue-950 text-center text-zinc-300 md:text-sm 2xl:text-2xl">
+        <div className="grid h-auto w-full grid-cols-1 justify-items-center gap-14 p-20 md:grid-cols-2 xl:grid-cols-3 xl:gap-8 xl:p-36">
           <div className="flex h-auto w-auto flex-col items-center gap-4 text-center xl:w-80">
             <Headset className="h-10 w-10" />
             <div className="font-baijamjuree-bold flex flex-col gap-2">
               <h2 className="text-2xl text-blue-300">Suporte</h2>
-              <p className="">
+              <p className="text-pretty px-4">
                 Suporte técnico rápido e personalizado, sem limites de chamadas.
                 Nossa equipe estará pronto para o atendimento pelos canais
                 WhatsApp, Skype, E-mails e telefones.
@@ -103,7 +103,7 @@ export function Body() {
             <RefreshCcw className="h-10 w-10" />
             <div className="flex flex-col gap-2 font-alt">
               <h2 className="text-2xl text-blue-300">Atualizações</h2>
-              <p className="">
+              <p className="text-pretty px-4">
                 Atualizações semanalmente com ajustes e melhoria de desempenho
                 para garantir que seu sistema esteja com a melhor usabilidade e
                 eficiência.
@@ -114,7 +114,7 @@ export function Body() {
             <Handshake className="h-10 w-10" />
             <div className="flex flex-col gap-2 font-alt">
               <h2 className="text-2xl text-blue-300">Proximidade</h2>
-              <p className="">
+              <p className="text-pretty px-4">
                 Aqui você será atendido por pessoas qualificadas e com
                 atendimento humanizado, aberto e honesto com informações
               </p>

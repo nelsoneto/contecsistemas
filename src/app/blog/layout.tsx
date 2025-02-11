@@ -1,5 +1,5 @@
+import NavbarBlog from '@/app/blog/components/NavbarBlog'
 import { ReactNode } from 'react'
-import { NavbarBlog } from './NavbarBlog'
 
 export default function BlogLayout({
   children,
@@ -9,7 +9,7 @@ export default function BlogLayout({
   return (
     <div>
       <NavbarBlog />
-      <main className="pt-36">{children}</main>
+      <main className="">{children}</main>
     </div>
   )
 }

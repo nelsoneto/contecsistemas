@@ -15,6 +15,7 @@ import { createClient } from 'contentful'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import Categories from '../components/Categories'
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID as string,
@@ -62,14 +63,17 @@ export default async function NewsPage() {
         <meta name="description" content="Confira as últimas notícias do nosso blog." />
         <meta name="keywords" content="blog, notícias, atualizações" />
       </Head>
-      <section className="mt-10 h-screen justify-center px-4 lg:px-60">
-        <h1 className="mb-10 text-start text-3xl tracking-tighter md:text-4xl">
-          Nossas últimas noticias
-        </h1>
+      <section className="mt-36 h-screen justify-center px-4 md:px-24 lg:px-44 xl:px-64">
+        <div className='flex flex-col md:flex-row justify-between'>
+          <h1 className="mb-10 text-start text-3xl tracking-tighter md:text-4xl">
+            Nossas últimas noticias
+          </h1>
+          <Categories />
+        </div>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post: Post, index: number) => (
             <Card
-              className="overflow-hidden rounded-lg border-none shadow-xl hover:outline hover:outline-offset-2 hover:outline-blue-500"
+              className=" bg-slate-200 overflow-hidden rounded-lg border-none shadow-xl hover:outline hover:outline-offset-2 hover:outline-blue-500"
               key={index}
             >
               <div className="relative h-48 w-full">
@@ -87,8 +91,8 @@ export default async function NewsPage() {
               <CardHeader>
                 <CardTitle>{post.fields.title}</CardTitle>
               </CardHeader>
-              <CardContent>
-                <CardDescription>{post.fields.description}</CardDescription>
+              <CardContent >
+                <CardDescription className='text-slate-700'>{post.fields.description}</CardDescription>
               </CardContent>
               <CardFooter>
                 <Button variant="midas">

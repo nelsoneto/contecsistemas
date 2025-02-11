@@ -22,13 +22,13 @@ type Props = {
 export default function HeroCarousel({ posts }: Props) {
   if (!posts || posts.length === 0) {
     return (
-      <div className="flex h-64 items-center justify-center">
-        <ClipLoader size={50} color={'#123abc'} loading={true} />
+      <div className="mt-40 flex h-64 items-center justify-center">
+        <ClipLoader size={60} color={'#123abc'} loading={true} />
       </div>
     )
   }
   return (
-    <div>
+    <div className="px-4">
       <Carousel
         plugins={[
           Autoplay({
@@ -37,14 +37,14 @@ export default function HeroCarousel({ posts }: Props) {
           }),
         ]}
       >
-        <CarouselContent className="rounded-lg">
+        <CarouselContent className="mb-16 mt-36 rounded-lg">
           {posts.map((post) => (
             <CarouselItem
-              className="transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-400"
+              className="transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-sm hover:shadow-blue-400"
               key={post.fields.title}
             >
               <Link href={`/blog/news/${post.fields.slug}`}>
-                <Card className="relative h-[36rem] w-full rounded-lg border-none shadow-xl shadow-blue-400">
+                <Card className="relative h-[36rem] w-full rounded-lg border-none shadow-sm shadow-blue-400">
                   <div
                     className={`absolute h-full w-full rounded-lg bg-cover bg-center brightness-50 filter`}
                     style={{

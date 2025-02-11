@@ -21,7 +21,7 @@ export function TabItem({ value, title, isSelected = false }: TabItemProps) {
   return (
     <Tabs.Trigger
       value={value}
-      className="relative rounded-lg bg-slate-800 p-2 font-alt text-2xl hover:bg-slate-700 hover:text-blue-400 data-[state=active]:bg-slate-700 data-[state=active]:text-blue-400 xl:text-sm"
+      className="relative rounded-sm bg-slate-800 p-2 font-alt text-2xl hover:bg-slate-700 hover:text-blue-400 data-[state=active]:bg-slate-700 data-[state=active]:text-blue-400 xl:text-sm"
       ref={tabRef}
     >
       <span>{title}</span>

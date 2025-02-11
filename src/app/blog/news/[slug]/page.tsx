@@ -1,66 +1,72 @@
+import { Post } from '@/app/blog/interfaces/post'
 import { client } from '@/lib/client'
-import { Document } from '@contentful/rich-text-types'
-import { Entry, EntrySkeletonType } from 'contentful'
 import { CalendarIcon } from 'lucide-react'
 import Image from 'next/image'
-import RichText from '../../rich-text'
+import { notFound } from 'next/navigation'
+import RichText from '../../components/RichText'
 
 type Props = {
   params: {
     slug: string
   }
+  // searchParams: {
+  //   page?: number
+  // }
 }
 
 export const dynamic = 'auto'
-export const fetchCache = 'auto'
 export const revalidate = 10
 
-export default async function NewsPage({ params }: Props) {
-  const { slug } = await params
+export default async function NewPage({ params }: Props) {
+  const { slug } = params
 
-  const response = await client.getEntries({
-    content_type: 'blog',
-    'fields.slug': slug,
-  })
+  try {
+    const response = await client.getEntries({
+      content_type: 'blog',
+      'fields.slug': slug,
+    })
 
-  const posts = response.items[0] as Entry<EntrySkeletonType>
+    const post = response.items[0] as unknown as Post
 
-  if (!posts) {
-    return <p>Post não encontrado</p>
-  }
+    // Check if post exists and is valid
+    if (!post) {
+      return notFound()
+    }
 
-  const date = new Date(posts.sys.createdAt)
-  const formattedDate = new Intl.DateTimeFormat('pt-BR', {
-    dateStyle: 'full',
-  }).format(date)
+    const date = new Date(post.sys.createdAt)
+    const formattedDate = new Intl.DateTimeFormat('pt-BR', {
+      dateStyle: 'full',
+    }).format(date)
 
-  const { title, body, image, description } = posts.fields as unknown as {
-    title: string
-    body: Document
-    image: { fields: { file: { url: string } } }
-    description: string
-  }
+    const { title, description, body, image } = post.fields
 
-  return (
-    <section className="mt-10 flex flex-col gap-y-4 px-4 xl:px-96">
-      <h1 className="text-3xl font-bold">{title}</h1>
-      <h2 className="text-start">{description}</h2>
-      <div className="flex items-center gap-2">
-        <CalendarIcon size={18} />
-        <p className="text-sm">{formattedDate}</p>
-      </div>
-      <Image
-        src={`https:${image.fields.file.url}`}
-        alt={title}
-        width={800}
-        height={400}
-        className="h-96 w-full rounded-lg object-cover"
-      />
-      <div className="flex w-full justify-center">
-        <article className="prose max-w-full text-justify lg:prose-lg prose-headings:text-stone-300 prose-p:text-slate-300">
+    return (
+      <section className="flex flex-col items-center justify-center">
+        <div className="mb-8 max-w-full pt-36 text-center xl:px-96 xl:text-start">
+          <h1 className="mb-4 text-3xl font-bold xl:text-4xl">{title}</h1>
+          <h2 className="mb-8 flex items-center justify-center gap-2 text-nowrap text-sm lg:text-base xl:justify-start">
+            <CalendarIcon size={16} />
+            {formattedDate}
+          </h2>
+          <div className="mb-10 flex flex-col items-center justify-center px-4 lg:px-0">
+            <Image
+              src={`https:${image?.fields.file.url}`}
+              alt={`${image?.fields.title}`}
+              width={900}
+              height={400}
+              className="rounded-md"
+            />
+            <p className="text-center text-sm">{description}</p>
+          </div>
+        </div>
+
+        <article className="prose mb-10 px-4 text-justify prose-headings:text-slate-200 prose-p:text-slate-300 prose-tr:text-blue-400 lg:px-0">
           <RichText content={body} />
         </article>
-      </div>
-    </section>
-  )
+      </section>
+    )
+  } catch (error) {
+    console.error('Error fetching post: ', error)
+    return notFound() // or you could return an error message
+  }
 }

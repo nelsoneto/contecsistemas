@@ -4,7 +4,7 @@ import { Post } from '@/app/blog/interfaces/post'
 import { Document } from '@contentful/rich-text-types'
 import { createClient } from 'contentful'
 import { useEffect, useState } from 'react'
-import HeroCarousel from './hero-carousel'
+import HeroCarousel from './components/HeroCarosel'
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID as string,
@@ -75,7 +75,7 @@ export default function BlogPage() {
   }, [])
 
   return (
-    <section className="px-4 lg:px-60">
+    <section className="px-4 md:px-24 lg:px-44 xl:px-64">
       <HeroCarousel posts={posts} />
     </section>
     // <div className="mx-auto flex max-h-max w-full justify-center gap-4 px-60">

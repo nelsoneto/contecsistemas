@@ -1,7 +1,7 @@
 export function PageMidasHeader() {
   return (
-    <div className="gap-2 text-pretty xl:flex-col">
-      <div className="mt-10 flex h-full w-full justify-center gap-4 bg-gradient-to-r from-blue-900 via-sky-700 to-blue-900 py-4 xl:mt-14">
+    <div className="mt-36 gap-2 text-pretty xl:flex-col">
+      <div className="mb-16 flex h-full w-full justify-center gap-4 bg-gradient-to-r from-blue-900 via-sky-700 to-blue-900 py-4 xl:mt-14">
         <h1 className="bg-gradient-to-r from-cyan-300 via-sky-400 to-blue-300 bg-clip-text px-1 font-alt text-4xl text-transparent md:text-6xl">
           MIDAS
         </h1>
@@ -22,7 +22,7 @@ export function PageMidasHeader() {
           /> */}
         </div>
       </div>
-      <div className="w-auto bg-gradient-to-r from-blue-900 via-cyan-700 to-blue-900 p-4 xl:px-72">
+      <div className="mb-6 mt-16 w-auto bg-gradient-to-r from-blue-900 via-cyan-700 to-blue-900 p-4 xl:px-72">
         <h1 className="mb-4 font-alt text-2xl xl:text-center xl:text-4xl">
           Simples de operar, tornando as vendas de balcões em atendimento
           rápido, prático, eficiente e seguro.

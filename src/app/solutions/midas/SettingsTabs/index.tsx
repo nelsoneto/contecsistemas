@@ -20,7 +20,7 @@ export function SettingsTabs() {
     <Tabs.Root
       value={currentTab}
       onValueChange={setCurrentTab}
-      className="h-auto w-full bg-slate-900 py-10"
+      className="h-auto w-full bg-slate-800 py-10"
       defaultValue="tab1"
     >
       <Tabs.List

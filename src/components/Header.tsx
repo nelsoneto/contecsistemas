@@ -3,7 +3,7 @@ import Link from 'next/link'
 export function Header() {
   return (
     // eslint-disable-next-line prettier/prettier
-    <header className="mt-9 h-auto w-auto bg-cover bg-maleImg bg-center px-10 py-32  xl:h-screen xl:px-60 xl:py-48">
+    <header className="mt-9 h-auto w-auto bg-cover bg-maleImg bg-center px-10 py-32  xl:h-screen md:px-24 lg:px-44 xl:px-64 2xl:px-64 xl:py-48">
       {/* <div className="bg-overlay-dark absolute inset-0"></div> */}
       <div className="w-full items-center justify-center gap-7 rounded-lg md:grid md:grid-cols-2">
         <div className="items-center justify-center gap-10 text-balance rounded-lg">
