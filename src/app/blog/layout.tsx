@@ -7,9 +7,9 @@ export default function BlogLayout({
   children: ReactNode
 }>) {
   return (
-    <div>
+    <div className="flex min-h-screen flex-col">
       <NavbarBlog />
-      <main className="">{children}</main>
+      <main className="flex-grow">{children}</main>
     </div>
   )
 }

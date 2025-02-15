@@ -1,7 +1,7 @@
 import { Mail, MapPin, Phone } from 'lucide-react'
 export function Footer() {
   return (
-    <div className="absolute max-h-full w-full">
+    <div className="relative w-full">
       <div className="grid grid-cols-1 gap-8 bg-slate-900 px-4 py-16 md:px-24 lg:px-44 xl:grid-cols-3 xl:justify-items-center xl:px-64 xl:py-32">
         <div className="flex flex-col gap-3">
           <h1 className="font-alt text-blue-400">Contato</h1>

@@ -47,7 +47,7 @@ export default async function NavbarBlog() {
 
   return (
     <nav className="fixed left-0 top-0 z-50 w-full font-alt shadow-md">
-      <div className="h-20 max-w-full items-center justify-between bg-slate-900 px-4 md:flex md:px-24 lg:px-44 xl:px-64">
+      <div className="h-20 max-w-full flex items-center md:justify-between justify-around bg-slate-900 px-4 md:px-24 lg:px-44 xl:px-64">
         <Link
           href="/blog"
           className="flex pl-4 py-2 w-14 lg:w-auto cursor-pointer items-center gap-1 text-2xl font-bold"
@@ -65,9 +65,9 @@ export default async function NavbarBlog() {
             </h1>
           </div>
         </Link>
-        {/* <Searcher posts={posts} /> */}
-        <SearcherAlt posts={posts} />
-
+        <div className="flex-1 flex justify-center ">
+          <SearcherAlt posts={posts} />
+        </div>
         <div className="flex items-center">
           <HamburgerMenu />
         </div>

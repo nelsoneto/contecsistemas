@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Post } from '@/app/blog/interfaces/post'
 import { client } from '@/lib/client'
 import { CalendarIcon } from 'lucide-react'
@@ -9,9 +10,6 @@ type Props = {
   params: {
     slug: string
   }
-  // searchParams: {
-  //   page?: number
-  // }
 }
 
 export const dynamic = 'auto'
@@ -42,25 +40,25 @@ export default async function NewPage({ params }: Props) {
 
     return (
       <section className="flex flex-col items-center justify-center">
-        <div className="mb-8 max-w-full pt-36 text-center xl:px-96 xl:text-start">
+        <div className="mb-8 max-w-full pt-36 text-pretty md:px-24 lg:px-44 xl:px-96">
           <h1 className="mb-4 text-3xl font-bold xl:text-4xl">{title}</h1>
-          <h2 className="mb-8 flex items-center justify-center gap-2 text-nowrap text-sm lg:text-base xl:justify-start">
+          <h2 className="mb-4 text-pretty text-2xl">{description}</h2>
+          <h3 className="mb-4 flex items-center justify-center gap-2 text-nowrap text-justify text-sm lg:text-base">
             <CalendarIcon size={16} />
             {formattedDate}
-          </h2>
-          <div className="mb-10 flex flex-col items-center justify-center px-4 lg:px-0">
+          </h3>
+          <div className="flex flex-col items-center justify-center px-4 lg:px-0">
             <Image
               src={`https:${image?.fields.file.url}`}
               alt={`${image?.fields.title}`}
-              width={900}
-              height={400}
+              width={600}
+              height={300}
               className="rounded-md"
             />
-            <p className="text-center text-sm">{description}</p>
           </div>
         </div>
 
-        <article className="prose mb-10 px-4 text-justify prose-headings:text-slate-200 prose-p:text-slate-300 prose-tr:text-blue-400 lg:px-0">
+        <article className="3xl:px-[580px] prose-xl mb-20 px-4 text-justify prose-headings:text-slate-200 prose-p:text-slate-300 prose-tr:text-blue-400 md:px-24 lg:px-44 xl:px-[400px]">
           <RichText content={body} />
         </article>
       </section>

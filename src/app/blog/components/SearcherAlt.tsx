@@ -21,7 +21,7 @@ type Props = {
   posts: Post[]
 }
 
-export default function Searcher({ posts }: Props) {
+export default function SearcherAlt({ posts }: Props) {
   const [open, setOpen] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
 
@@ -33,14 +33,17 @@ export default function Searcher({ posts }: Props) {
     <div className="flex items-center space-x-4">
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
-          <Button variant="midas" aria-label="Search">
+          <Button
+            aria-label="Search"
+            className="border-2 border-slate-500/50 text-xs md:text-base"
+          >
             <Search size={20} />
-            Pesquisar
+            <span className="hidden md:inline">Pesquisar</span>
           </Button>
         </PopoverTrigger>
 
         <PopoverContent
-          className="bg-slate-900 p-0 text-slate-200"
+          className="w-52 bg-slate-900 p-0 text-slate-200 md:w-auto"
           side="bottom"
           align="center"
         >

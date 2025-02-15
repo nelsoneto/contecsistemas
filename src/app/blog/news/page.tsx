@@ -15,7 +15,7 @@ import { createClient } from 'contentful'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import Categories from '../components/Categories'
+import CategoriesMenu from '../components/CategoriesMenu'
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID as string,
@@ -63,12 +63,12 @@ export default async function NewsPage() {
         <meta name="description" content="Confira as últimas notícias do nosso blog." />
         <meta name="keywords" content="blog, notícias, atualizações" />
       </Head>
-      <section className="mt-36 h-screen justify-center px-4 md:px-24 lg:px-44 xl:px-64">
-        <div className='flex flex-col md:flex-row justify-between'>
-          <h1 className="mb-10 text-start text-3xl tracking-tighter md:text-4xl">
-            Nossas últimas noticias
+      <section className="mt-36 h-screen justify-center max-a px-4 md:px-24 lg:px-44 xl:px-64 pb-44">
+        <div className='sm:flex flex-row justify-between'>
+          <h1 className="text-primary mb-10 text-center text-3xl font-bold tracking-tight md:text-4xl">
+            Todas as Noticias
           </h1>
-          <Categories />
+          <CategoriesMenu />
         </div>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post: Post, index: number) => (

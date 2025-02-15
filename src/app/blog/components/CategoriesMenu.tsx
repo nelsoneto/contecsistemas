@@ -2,9 +2,9 @@
 import { client } from '@/lib/client'
 import { Document } from '@contentful/rich-text-types'
 import { Post } from '../interfaces/post'
-import DropdownCategories from './DropdownMenu'
+import DropdownCategories from './DropdownCategories'
 
-export default async function Categories() {
+export default async function CategoriesMenu() {
   const categories = await client.getEntries({
     content_type: 'blog',
   })

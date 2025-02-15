@@ -37,7 +37,7 @@ export default function HeroCarousel({ posts }: Props) {
           }),
         ]}
       >
-        <CarouselContent className="mb-16 mt-36 rounded-lg">
+        <CarouselContent className="mb-8 mt-36 rounded-lg">
           {posts.map((post) => (
             <CarouselItem
               className="transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-sm hover:shadow-blue-400"
@@ -52,22 +52,22 @@ export default function HeroCarousel({ posts }: Props) {
                     }}
                   ></div>
                   <CardContent className="relative z-10 flex min-h-screen flex-col items-start justify-center gap-y-4">
-                    <div className="flex gap-2">
+                    <div className="flex-row gap-2 text-[2px] md:flex md:text-base">
                       {post.fields.tags.map((tag: Key | null | undefined) => (
-                        <Badge key={tag} className="">
+                        <Badge key={tag} className="overflow-hidden truncate">
                           {typeof tag === 'string'
                             ? tag.charAt(0).toUpperCase() + tag.slice(1)
                             : tag}
                         </Badge>
                       ))}
                     </div>
-                    <h2 className="text-start text-4xl font-bold tracking-tight text-slate-50">
+                    <h2 className="text-start text-xl font-bold tracking-tight text-slate-50 md:text-4xl">
                       {post.fields.title}
                     </h2>
-                    <p className="text-start text-slate-300">
+                    <p className="text-start text-sm text-slate-300 md:text-base">
                       {post.fields.description}
                     </p>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-xs md:text-base">
                       <CalendarIcon className="h-4 w-4 text-slate-300" />
                       <p className="text-slate-300">
                         {new Date(post.sys.createdAt).toLocaleDateString(

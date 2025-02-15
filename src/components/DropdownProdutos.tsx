@@ -1,5 +1,5 @@
 'use client'
-
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,8 +8,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@radix-ui/react-dropdown-menu'
-import { Button } from './ui/button'
+} from '@/components/ui/dropdown-menu'
+import Link from 'next/link'
 
 const categories = [
   { id: 1, name: 'MIDAS', href: '/solutions/midas' },
@@ -22,20 +22,21 @@ export function DropdownProdutos() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="midas">Produtos</Button>
+        <Button>Produtos</Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-96 justify-items-center rounded-sm border-2 border-blue-500 bg-slate-900">
-        <DropdownMenuLabel className="flex w-full items-center justify-center bg-slate-700 py-2">
+      <DropdownMenuContent className="w-52 bg-slate-900">
+        <DropdownMenuLabel className="p-2 font-alt text-base text-slate-200">
           Produtos
         </DropdownMenuLabel>
+        <DropdownMenuSeparator className="bg-blue-400/40" />
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           {categories.map((category, id) => (
-            <a key={id} href={category.href}>
-              <DropdownMenuItem className="cursor-pointer p-2">
-                {category.name}
+            <Link key={id} href={category.href}>
+              <DropdownMenuItem className="cursor-pointer p-2 text-base hover:bg-slate-800">
+                {category.name.charAt(0).toUpperCase() + category.name.slice(1)}
               </DropdownMenuItem>
-            </a>
+            </Link>
           ))}
         </DropdownMenuGroup>
       </DropdownMenuContent>

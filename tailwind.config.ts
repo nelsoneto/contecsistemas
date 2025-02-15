@@ -10,6 +10,10 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
+			screens: {
+
+				'3xl': '1920px', // Adiciona um novo breakpoint
+			},
 			colors: {
 				'overlay-dark': 'rgba(0, 0, 0, 0.5)',
 			},

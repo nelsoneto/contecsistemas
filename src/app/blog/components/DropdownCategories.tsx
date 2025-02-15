@@ -34,7 +34,7 @@ export default function DropdownCategories({
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           {categories.map((category, index) => (
-            <Link key={index} href={`/categories/${category}`}>
+            <Link key={index} href={`/blog/categories/${category}`}>
               <DropdownMenuItem className="cursor-pointer p-2 hover:bg-slate-800">
                 {category.charAt(0).toUpperCase() + category.slice(1)}
               </DropdownMenuItem>

@@ -22,8 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="antialiased">
-      <body className={`${roboto.variable} ${baiJamjuree.variable} font-sans`}>
-        <main className="">
+      <body
+        className={`${roboto.variable} ${baiJamjuree.variable} flex min-h-screen flex-col font-sans`}
+      >
+        <main className="flex-grow">
           <ConditionalNavbar />
           {children}
           <Widget />
