@@ -26,7 +26,7 @@ export default function DropdownCategories({
           Categorias
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-36 bg-slate-900">
+      <DropdownMenuContent className="max-h-64 w-36 overflow-y-auto bg-slate-900">
         <DropdownMenuLabel className="p-2 text-slate-200">
           Categorias
         </DropdownMenuLabel>

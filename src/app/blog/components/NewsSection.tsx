@@ -14,7 +14,7 @@ type Props = {
   categories: string[]
 }
 
-export default function NewsSection({ posts, categories }: Props) {
+export default function NewsSection({ posts }: Props) {
   const [isLoading, setIsLoading] = useState(true)
 
   // Simula o carregamento dos dados
@@ -25,22 +25,15 @@ export default function NewsSection({ posts, categories }: Props) {
     return () => clearTimeout(timer)
   }, [])
 
+  const limitedPosts = posts.slice(0, 4)
+  console.log(limitedPosts)
+
   return (
     <section className="my-10">
       <div className="flex items-center justify-between">
         <Link href={'/blog/news'} className="text-primary text-3xl font-bold">
           Últimas Notícias
         </Link>
-        <div className="flex items-center gap-x-2">
-          {categories &&
-            categories.map((cat) => (
-              <Badge key={cat}>
-                <Link href={`/blog/categories/${cat}`}>
-                  {cat.charAt(0).toUpperCase() + cat.slice(1)}
-                </Link>
-              </Badge>
-            ))}
-        </div>
       </div>
       <div className="mt-8 grid grid-cols-1 gap-6">
         {isLoading
@@ -49,10 +42,10 @@ export default function NewsSection({ posts, categories }: Props) {
             <NewsSkeleton key={index} />
           ))
           : // Exibe o conteúdo real após o carregamento
-          posts.map((post, index) => (
+          limitedPosts.map((post, index) => (
             <div
               key={post.sys.id}
-              className={`flex flex-col items-center justify-center gap-x-6 pb-6 ${index !== posts.length - 1 ? 'border-b border-gray-200' : ''
+              className={`flex flex-col items-center justify-center gap-x-6 pb-10 ${index !== posts.length - 1 ? 'border-b border-gray-200/20' : ''
                 } md:flex-row`}
             >
               <div className="flex flex-col md:w-1/2">
@@ -76,7 +69,7 @@ export default function NewsSection({ posts, categories }: Props) {
                   <CalendarIcon size={16} />
                   <p className="text-foreground">
                     {new Date(post.sys.createdAt).toLocaleDateString(
-                      'es-ES',
+                      'pt-BR',
                       {
                         year: 'numeric',
                         month: 'long',
@@ -94,9 +87,11 @@ export default function NewsSection({ posts, categories }: Props) {
                       <Badge
                         variant={'outline'}
                         key={tag}
-                        className="border-none bg-slate-700 text-slate-300"
+                        className="border-none bg-slate-800 hover:bg-slate-700 text-slate-300"
                       >
-                        {tag.charAt(0).toUpperCase() + tag.slice(1)}
+                        <Link href={`/blog/categories/${tag}`}>
+                          {tag.charAt(0).toUpperCase() + tag.slice(1)}
+                        </Link>
                       </Badge>
                     ))}
                   </div>
@@ -112,6 +107,11 @@ export default function NewsSection({ posts, categories }: Props) {
               </div>
             </div>
           ))}
+        <div className='flex justify-center items-center w-full mt-10'>
+          <Button variant={'midas'} className='xl:w-40 w-full '>
+            <Link href={`/blog/news/`}>Mais notícias</Link>
+          </Button>
+        </div>
       </div>
     </section>
   )

@@ -39,8 +39,8 @@ export default async function NewPage({ params }: Props) {
     const { title, description, body, image } = post.fields
 
     return (
-      <section className="flex flex-col items-center justify-center">
-        <div className="mb-8 max-w-full pt-36 text-pretty md:px-24 lg:px-44 xl:px-96">
+      <section className="flex flex-col items-center min-h-screen justify-center">
+        <div className="mb-8 max-w-full flex-grow pt-36 text-pretty md:px-24 lg:px-44 xl:px-96">
           <h1 className="mb-4 text-3xl font-bold xl:text-4xl">{title}</h1>
           <h2 className="mb-4 text-pretty text-2xl">{description}</h2>
           <h3 className="mb-4 flex items-center justify-center gap-2 text-nowrap text-justify text-sm lg:text-base">

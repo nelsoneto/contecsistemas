@@ -74,14 +74,14 @@ export default function BlogPage() {
         setPosts(postsData)
 
         // Fetch additional posts for categories
-        const response2 = await client.getEntries({
+        const responseTwo = await client.getEntries({
           content_type: "blog",
           limit: 3,
           skip: 3,
         })
 
-        const posts2: Post[] = await Promise.all(
-          response2.items.map(async (item): Promise<Post> => {
+        const postsTwo: Post[] = await Promise.all(
+          responseTwo.items.map(async (item): Promise<Post> => {
             let imageUrl: string | undefined
             if (item.fields.image) {
               try {
@@ -127,7 +127,7 @@ export default function BlogPage() {
             }
           }),
         )
-        const categorias = posts2.map((post) => post.fields.tags).flat()
+        const categorias = postsTwo.map((post) => post.fields.tags).flat()
         const uniqueCategorias = [...new Set(categorias)] as string[]
         setUniqueCategorias(uniqueCategorias)
       } catch (error) {

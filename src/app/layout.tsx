@@ -1,5 +1,5 @@
+import ConditionalFooter from '@/components/ConditionalFooter'
 import ConditionalNavbar from '@/components/ConditionalNavbar'
-import { Footer } from '@/components/Footer'
 import { Widget } from '@/components/Widget'
 import {
   Bai_Jamjuree as BaiJamjuree,
@@ -29,7 +29,8 @@ export default function RootLayout({
           <ConditionalNavbar />
           {children}
           <Widget />
-          <Footer />
+          <ConditionalFooter />
+          {/* <Footer /> */}
         </main>
       </body>
     </html>
