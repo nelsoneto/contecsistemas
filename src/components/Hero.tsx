@@ -13,11 +13,15 @@ export function Hero() {
           </h1>
 
           <p className="text-justify">
-            Aumente a produtividade ao automatizar rotinas dispendiosas da
-            administração, mostrando informações relevantes através de
-            relatórios gerenciais e DRE. Conta ainda com emissão de boletos
-            bancários, emissão de NF-e, NFC-e, SPED Fiscal e PIS/COFINS e muito
-            mais.
+            Aumente a produtividade da sua empresa ao automatizar processos
+            administrativos complexos e demorados. Com soluções integradas, você
+            tem acesso a relatórios gerenciais detalhados e DREs (Demonstração
+            de Resultados do Exercício) que oferecem insights valiosos para a
+            tomada de decisões estratégicas. Além disso, o sistema permite a
+            emissão de boletos bancários, NF-e, NFC-e, SPED Fiscal, PIS/COFINS e
+            muito mais, tudo de forma ágil e segura. Simplifique suas operações,
+            reduza custos e ganhe eficiência com ferramentas que otimizam a
+            gestão do seu negócio.
           </p>
           <Link
             href="/solutions/midas"

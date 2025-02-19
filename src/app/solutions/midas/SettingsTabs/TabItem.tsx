@@ -7,6 +7,8 @@ export interface TabItemProps {
   value: string
   title: string
   isSelected?: boolean
+  onClick?: () => void
+  className?: string
 }
 
 export function TabItem({ value, title, isSelected = false }: TabItemProps) {

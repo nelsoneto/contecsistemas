@@ -11,9 +11,84 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 
+// Interface para os cards de recursos
+interface FeatureCardProps {
+  icon: React.ComponentType<{ className?: string }>
+  title: string
+  description: string
+}
+
+interface SolutionCardProps {
+  href: string
+  title: string
+  icon: React.ComponentType<{ className?: string }>
+}
+
+// Componente para os cards de soluções
+const SolutionCard = ({ href, title, icon: Icon }: SolutionCardProps) => (
+  <div className="rounded-lg border-2 border-blue-400/10 px-10 py-8 shadow-md shadow-sky-800/50 transition-all duration-300 hover:border-2 hover:border-sky-500/70">
+    <Link
+      href={href}
+      className="flex flex-col items-center justify-center gap-6"
+    >
+      {title}
+      <Icon className="h-8 w-8 md:h-16 md:w-16" />
+    </Link>
+  </div>
+)
+
+// Componente para os cards de recursos
+
+const FeatureCard = ({ icon: Icon, title, description }: FeatureCardProps) => (
+  <div className="flex h-auto w-auto flex-col items-center gap-4 text-center xl:w-80">
+    <Icon className="h-10 w-10" />
+    <div className="flex flex-col gap-2">
+      <h2 className="text-2xl text-blue-300">{title}</h2>
+      <p className="text-pretty px-4 text-base">{description}</p>
+    </div>
+  </div>
+)
+
 export function Body() {
+  // Dados para os cards de soluções
+  const solutions = [
+    { href: '/solutions/midas', title: 'CONFECÇÕES', icon: Shirt },
+    { href: '/solutions/midas', title: 'SUPERMERCADOS', icon: ShoppingCart },
+    { href: '/solutions/midas', title: 'ATACADO E VAREJO', icon: Package },
+    { href: '/solutions/midas', title: 'OFICINAS', icon: Wrench },
+    {
+      href: '/solutions/midas',
+      title: 'MATERIAIS PARA CONSTRUÇÕES',
+      icon: BrickWall,
+    },
+    { href: '/solutions/midas', title: 'INDUSTRIAS', icon: Factory },
+  ]
+
+  // Dados para os cards de recursos
+  const features = [
+    {
+      icon: Headset,
+      title: 'Suporte',
+      description:
+        'Suporte técnico ágil e personalizado, sem limites de chamadas ou burocracia. Nossa equipe especializada está disponível pelos canais que você preferir: WhatsApp, Skype, E-mail ou Telefone. Resolvemos suas dúvidas e problemas de forma rápida e eficiente.',
+    },
+    {
+      icon: RefreshCcw,
+      title: 'Atualizações',
+      description:
+        'Atualizações semanais com ajustes precisos e otimizações de desempenho, garantindo que seu sistema esteja sempre rápido, seguro e eficiente. Mantemos sua operação alinhada com as melhores práticas e tecnologias, para que você tenha a melhor experiência e usabilidade possível.',
+    },
+    {
+      icon: Handshake,
+      title: 'Proximidade',
+      description:
+        'Atendimento humanizado e transparente, realizado por profissionais qualificados que priorizam a clareza e a empatia. Aqui, você recebe informações honestas e soluções personalizadas, criando uma relação de confiança e parceria com seu negócio.',
+    },
+  ]
+
   return (
     <div className="h-auto">
+      {/* Seção de soluções */}
       <div className="h-auto bg-slate-900 text-zinc-300">
         <div className="flex h-full w-full flex-col items-center space-y-2 bg-pattern bg-center bg-no-repeat px-4 py-8 md:px-24 lg:px-44 xl:px-64 xl:py-10 2xl:px-64">
           <div className="flex flex-col gap-10 text-center font-alt md:px-10">
@@ -23,112 +98,22 @@ export function Body() {
             </h1>
           </div>
 
-          <div className="font-baijamjuree-bold grid justify-center gap-8 px-2 py-14 text-center sm:grid-cols-2 md:text-lg xl:grid-cols-3">
-            <div className="rounded-lg border-2 border-blue-400/10 px-10 py-8 shadow-md shadow-sky-800/50 hover:border-2 hover:border-sky-500/70">
-              <Link
-                href="/solutions/midas"
-                className="flex flex-col items-center justify-center gap-6"
-              >
-                CONFECÇÕES
-                <Shirt className="h-8 w-8 md:h-16 md:w-16" />
-              </Link>
-            </div>
-
-            <div className="rounded-lg border-2 border-blue-400/10 px-10 py-8 shadow-md shadow-sky-800/50 hover:border-2 hover:border-sky-500/70">
-              <Link
-                href="/solutions/midas"
-                className="flex flex-col items-center justify-center gap-6"
-              >
-                SUPERMERCADOS
-                <ShoppingCart className="h-8 w-8 md:h-16 md:w-16" />
-              </Link>
-            </div>
-
-            <div className="rounded-lg border-2 border-blue-400/10 px-10 py-8 shadow-md shadow-sky-800/50 hover:border-2 hover:border-sky-500/70">
-              <Link
-                href="/solutions/midas"
-                className="flex flex-col items-center justify-center gap-6"
-              >
-                ATACADO E VAREJO
-                <Package className="h-8 w-8 md:h-16 md:w-16" />
-              </Link>
-            </div>
-
-            <div className="rounded-lg border-2 border-blue-400/10 px-10 py-8 shadow-md shadow-sky-800/50 hover:border-2 hover:border-sky-500/70">
-              <Link
-                href="/solutions/midas"
-                className="flex flex-col items-center justify-center gap-6"
-              >
-                OFICINAS
-                <Wrench className="h-8 w-8 md:h-16 md:w-16" />
-              </Link>
-            </div>
-
-            <div className="rounded-lg border-2 border-blue-400/10 px-10 py-8 shadow-md shadow-sky-800/50 hover:border-2 hover:border-sky-500/70">
-              <Link
-                href="/solutions/midas"
-                className="flex flex-col items-center justify-center gap-6"
-              >
-                MATERIAIS PARA CONSTRUÇÕES
-                <BrickWall className="h-8 w-8 md:h-16 md:w-16" />
-              </Link>
-            </div>
-
-            <div className="rounded-lg border-2 border-blue-400/10 px-10 py-8 shadow-md shadow-sky-800/50 hover:border-2 hover:border-sky-500/70">
-              <Link
-                href="/solutions/midas"
-                className="flex flex-col items-center justify-center gap-6"
-              >
-                INDUSTRIAS
-                <Factory className="h-8 w-8 md:h-16 md:w-16" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="gap-10 bg-gradient-to-r from-blue-950 via-blue-800 to-blue-950 text-center text-zinc-300 md:text-sm 2xl:text-2xl">
-        <div className="grid h-auto w-full grid-cols-1 justify-items-center gap-14 p-20 md:grid-cols-2 xl:grid-cols-3 xl:gap-8 xl:p-36">
-          <div className="flex h-auto w-auto flex-col items-center gap-4 text-center xl:w-80">
-            <Headset className="h-10 w-10" />
-            <div className="font-baijamjuree-bold flex flex-col gap-2">
-              <h2 className="text-2xl text-blue-300">Suporte</h2>
-              <p className="text-pretty px-4">
-                Suporte técnico rápido e personalizado, sem limites de chamadas.
-                Nossa equipe estará pronto para o atendimento pelos canais
-                WhatsApp, Skype, E-mails e telefones.
-              </p>
-            </div>
-          </div>
-          <div className="flex h-auto w-auto flex-col items-center gap-4 text-center xl:w-80">
-            <RefreshCcw className="h-10 w-10" />
-            <div className="flex flex-col gap-2 font-alt">
-              <h2 className="text-2xl text-blue-300">Atualizações</h2>
-              <p className="text-pretty px-4">
-                Atualizações semanalmente com ajustes e melhoria de desempenho
-                para garantir que seu sistema esteja com a melhor usabilidade e
-                eficiência.
-              </p>
-            </div>
-          </div>
-          <div className="flex h-auto w-auto flex-col items-center gap-4 text-center xl:w-80">
-            <Handshake className="h-10 w-10" />
-            <div className="flex flex-col gap-2 font-alt">
-              <h2 className="text-2xl text-blue-300">Proximidade</h2>
-              <p className="text-pretty px-4">
-                Aqui você será atendido por pessoas qualificadas e com
-                atendimento humanizado, aberto e honesto com informações
-              </p>
-            </div>
+          <div className="font-baijamjuree-bold grid justify-center gap-8 px-2 py-8 text-center sm:grid-cols-2 md:text-lg xl:grid-cols-3">
+            {solutions.map((solution, index) => (
+              <SolutionCard key={index} {...solution} />
+            ))}
           </div>
         </div>
       </div>
 
-      {/* <div className="flex w-full flex-col items-center justify-around p-16">
-        <h1 className="font-baijamjuree-bold text-4xl">BLOG</h1>
-        <div className="grid w-full justify-around gap-4 p-20 text-center xl:grid-cols-4">
-          <div className="h-96 w-80 border-2 border-cyan-300 p-20">1</div>
+      {/* Seção de recursos */}
+      <div className="gap-10 bg-gradient-to-r from-blue-950 via-blue-800 to-blue-950 text-zinc-300 md:text-sm 2xl:text-2xl">
+        <div className="grid h-auto w-full grid-cols-1 justify-items-center gap-10 px-4 py-14 text-justify md:grid-cols-2 xl:grid-cols-3 xl:gap-8 xl:p-14">
+          {features.map((feature, index) => (
+            <FeatureCard key={index} {...feature} />
+          ))}
         </div>
-      </div> */}
+      </div>
     </div>
   )
 }

@@ -3,6 +3,7 @@
 import { Post } from '@/app/blog/interfaces/post'
 import { Document } from '@contentful/rich-text-types'
 import { createClient } from 'contentful'
+import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import HeroCarousel from './components/HeroCarosel'
 import NewsSection from './components/NewsSection'
@@ -139,9 +140,15 @@ export default function BlogPage() {
   }, [])
 
   return (
-    <section className=" px-4 md:px-24 lg:px-44 xl:px-64">
-      <HeroCarousel posts={posts} />
-      <NewsSection posts={posts} categories={uniqueCategorias} />
-    </section>
+    <>
+      <Head>
+        <title>Blog | Contec Sistemas</title>
+        <meta name="description" content="Confira as últimas notícias no blog da Contec Sistemas." />
+      </Head>
+      <section className=" px-4 md:px-24 lg:px-44 xl:px-64">
+        <HeroCarousel posts={posts} />
+        <NewsSection posts={posts} categories={uniqueCategorias} />
+      </section>
+    </>
   )
 }

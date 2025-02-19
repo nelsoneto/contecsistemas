@@ -1,102 +1,112 @@
+'use client'
+import { motion } from 'framer-motion'
 export function PageMidasHero() {
+  const features = [
+    {
+      title: 'Controle financeiro',
+      description:
+        'Renegociações, fluxo de caixa, gestão de contas a pagar e a receber, grupos de receitas e despesas, centro de custo, controle de comissões e vendas.',
+    },
+    {
+      title: 'Estoque',
+      description:
+        'Cadastro, controle, histórico, movimentação, condicional, importação do XML na entrada, com cadastro automático do produto, controle de unidades.',
+    },
+    {
+      title: 'Cadastros',
+      description:
+        'Clientes, fornecedores, funcionários, convênios, contas e bancos.',
+    },
+    {
+      title: 'Fiscal',
+      description:
+        'Emissão Nota Fiscal Eletrônica, EFD ICMS/IPI (SPED Fiscal) e EFD Contribuições, CT-e, CC-e, NFC-e, MDF-e.',
+    },
+    {
+      title: 'Produção',
+      description:
+        'Cadastro de receitas para produtos industrializados com baixa automática de insumos na produção.',
+    },
+    {
+      title: 'Ordem de serviços',
+      description: 'Criação de controle sobre serviços prestados.',
+    },
+    {
+      title: 'Controle de entregas',
+      description:
+        'Agendamento de entrega de produtos, relatórios de itens a entregar e previsão de entregas.',
+    },
+    {
+      title: 'Conferência de movimento',
+      description:
+        'Conferência de saídas de produtos com leitura de código de barras e impressão de etiquetas.',
+    },
+    {
+      title: 'Agendas',
+      description:
+        'Agendamento de serviços com geração de ordem de serviços. Agendamento de cobrança com emissão de cobrança.',
+    },
+    {
+      title: 'Força de Vendas',
+      description: 'Módulo PDV (supermercados) venda, Tablets e Smartphones.',
+    },
+    {
+      title: 'Atualização',
+      description:
+        'Sistema atualizado com as últimas exigências relacionadas a emissão de NF-e e NFC-e.',
+    },
+  ]
+
+  // Variantes de animação
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // Delay entre as animações dos filhos
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  }
+
   return (
-    <>
-      <div className="flex w-auto flex-col space-y-8 py-4 xl:px-72">
-        <div className="flex flex-col items-center justify-center px-4 py-4 xl:px-10">
-          <h2 className="font-alt text-3xl xl:text-4xl">
-            Conheça as características técnicas do{' '}
-            <span className="text-blue-400">MIDAS</span>
-          </h2>
-        </div>
-        <div className="grid h-full w-full gap-6 pb-9 text-lg xl:grid-cols-2">
-          <div className="w-full py-2 text-justify">
-            <ul className="list-inside list-disc">
-              <li className="px-4 font-alt uppercase text-blue-400 xl:px-0">
-                Controle financeiro
-              </li>{' '}
-              <p className="mb-5 px-4">
-                Renegociações, fluxo de caixa, gestão de contas a pagar e a
-                receber, grupos de receitas e despesas, centro de custo,
-                controle de comissões e vendas.
-              </p>
-              <li className="px-4 font-alt uppercase text-blue-400 xl:px-0">
-                Estoque
-              </li>{' '}
-              <p className="mb-5 px-4">
-                Cadastro, controle, histórico, movimentação, condicional,
-                importação do XML na entrada, com cadastro automático do
-                produto, controle de unidades.
-              </p>
-              <li className="px-4 font-alt uppercase text-blue-400 xl:px-0">
-                Cadastros
-              </li>
-              <p className="mb-5 px-4">
-                Clientes, fornecedores, funcionários, convenios, contas e
-                bancos.
-              </p>
-              <li className="px-4 font-alt uppercase text-blue-400 xl:px-0">
-                Fiscal
-              </li>
-              <p className="mb-5 px-4">
-                Emissão Nota Fiscal Eletronica, EFD ICMS/IPI (SPED Fiscal) e EFD
-                Contribuições, CT-e, CC-e, NFC-e, MDF-e.
-              </p>
-              <li className="px-4 font-alt uppercase text-blue-400 xl:px-0">
-                Produção
-              </li>
-              <p className="mb-5 px-4">
-                Cadastro de receitas para produtos industrializados com baixa
-                automática de insumos na produção.
-              </p>
-              <li className="px-4 font-alt uppercase text-blue-400 xl:px-0">
-                Ordem de serviços
-              </li>
-              <p className="mb-5 px-4">
-                Criação de controle sobre serviços prestados.
-              </p>
-            </ul>
-          </div>
-          <div className="w-full py-2 text-justify">
-            <ul className="list-inside list-disc">
-              <li className="px-4 font-alt uppercase text-blue-400 xl:px-0">
-                Controle de entregas
-              </li>
-              <p className="mb-5 px-4">
-                Agendamento de entrega de produtos, relatórios de itens a
-                entregar e previsão de entregas.
-              </p>
-              <li className="px-4 font-alt uppercase text-blue-400 xl:px-0">
-                Conferência de movimento
-              </li>
-              <p className="mb-5 px-4">
-                Conferência de saídas de produtos com leitura de código de
-                barras e impressão de etiquetas.
-              </p>
-              <li className="px-4 font-alt uppercase text-blue-400 xl:px-0">
-                Agendas
-              </li>
-              <p className="mb-5 px-4">
-                Agendamento de serviços com geração de ordem de serviços.
-                Agendamento de cobrança com emissão de cobrança.
-              </p>
-              <li className="px-4 font-alt uppercase text-blue-400 xl:px-0">
-                Força de Vendas
-              </li>
-              <p className="mb-5 px-4">
-                Módulo PDV (supermercados) venda, Tablets e Smartphones.
-              </p>
-              <li className="px-4 font-alt uppercase text-blue-400 xl:px-0">
-                Atualização
-              </li>
-              <p className="mb-5 px-4">
-                Sistema atualizado com as últimas exigências relacionadas a
-                emissão de NF-e e NFC-e.
-              </p>
-            </ul>
-          </div>
-        </div>
-        {/* <div className="border-t-2 border-slate-700" /> */}
-      </div>
-    </>
+    <motion.section
+      className="mx-auto max-w-7xl px-4 py-8 md:px-24 lg:px-44"
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+    >
+      <motion.header className="mb-12 text-center" variants={itemVariants}>
+        <h2 className="font-alt text-3xl xl:text-4xl">
+          Conheça as características técnicas do{' '}
+          <span className="text-blue-400">MIDAS</span>
+        </h2>
+      </motion.header>
+
+      <motion.div
+        className="grid gap-8 md:grid-cols-2"
+        variants={containerVariants}
+      >
+        {features.map((feature, index) => (
+          <motion.div
+            key={index}
+            className="group rounded-lg p-6 transition-all"
+            variants={itemVariants}
+            whileHover={{ scale: 1.05 }} // Efeito de hover
+          >
+            <dl className="space-y-2">
+              <dt className="font-alt text-2xl uppercase text-blue-400">
+                {feature.title}
+              </dt>
+              <dd className="text-gray-400">{feature.description}</dd>
+            </dl>
+          </motion.div>
+        ))}
+      </motion.div>
+    </motion.section>
   )
 }

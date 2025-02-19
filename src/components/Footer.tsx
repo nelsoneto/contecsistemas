@@ -33,8 +33,8 @@ export function Footer() {
 
   const navigationLinks = [
     { label: 'Inicio', href: '/' },
-    { label: 'Blog', href: '/' },
-    { label: 'Suporte', href: '/' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'Suporte', href: '/suport' },
     { label: 'Produtos', href: '/solutions/midas' },
   ]
 

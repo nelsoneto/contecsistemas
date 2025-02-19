@@ -1,16 +1,52 @@
+import { motion } from 'framer-motion'
 import { ArrowUpDown, Download, MonitorDown } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import anyDeskImg from '../../../public/images/AnyDesk.png'
 import teamViewerImg from '../../../public/images/TeamViewer.png'
 
+// Variantes de animação
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2, // Delay entre as animações dos filhos
+    },
+  },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+}
+
 export function DownloadContents() {
   return (
     <>
       <div className="flex flex-col items-center justify-center py-10 text-2xl">
-        <h1 className="font-alt text-xl xl:text-3xl">Downloads Importantes</h1>
-        <div className="grid gap-8 py-10 sm:grid-cols-2 xl:grid-cols-4">
-          <div className="flex h-60 w-auto flex-col gap-4 rounded-lg bg-slate-100 p-4 text-blue-500 shadow-sm shadow-blue-300 outline outline-offset-2">
+        {/* Título com animação */}
+        <motion.h1
+          className="font-alt text-xl xl:text-3xl"
+          variants={itemVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          Downloads Importantes
+        </motion.h1>
+
+        {/* Grid de cards com animação */}
+        <motion.div
+          className="grid gap-8 py-10 sm:grid-cols-2 xl:grid-cols-4"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {/* Card 1: Acesso Remoto */}
+          <motion.div
+            className="flex h-60 w-auto flex-col gap-4 rounded-lg bg-slate-100 p-4 text-blue-500 shadow-sm shadow-blue-300 outline outline-offset-2"
+            variants={itemVariants}
+          >
             <span className="flex justify-center font-alt">Acesso Remoto</span>
             <div className="flex flex-col gap-2 py-4 text-base">
               <span className="flex justify-center rounded-lg hover:bg-slate-200">
@@ -35,9 +71,13 @@ export function DownloadContents() {
                 </Link>
               </span>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="flex h-60 w-auto flex-col gap-4 rounded-lg bg-slate-100 p-4 text-blue-500 shadow-sm shadow-blue-300 outline outline-offset-2">
+          {/* Card 2: MIDAS 2.21 */}
+          <motion.div
+            className="flex h-60 w-auto flex-col gap-4 rounded-lg bg-slate-100 p-4 text-blue-500 shadow-sm shadow-blue-300 outline outline-offset-2"
+            variants={itemVariants}
+          >
             <span className="flex justify-center font-alt">MIDAS 2.21</span>
             <div className="flex flex-col gap-1 text-base">
               <span className="flex justify-between rounded-lg px-5 hover:bg-slate-200">
@@ -61,8 +101,13 @@ export function DownloadContents() {
                 </Link>
               </span>
             </div>
-          </div>
-          <div className="flex h-60 w-auto flex-col gap-4 rounded-lg bg-slate-100 p-4 text-blue-500 shadow-sm shadow-blue-300 outline outline-offset-2">
+          </motion.div>
+
+          {/* Card 3: Versões */}
+          <motion.div
+            className="flex h-60 w-auto flex-col gap-4 rounded-lg bg-slate-100 p-4 text-blue-500 shadow-sm shadow-blue-300 outline outline-offset-2"
+            variants={itemVariants}
+          >
             <span className="flex justify-center font-alt">Versões</span>
             <div className="flex flex-col gap-1 text-lg">
               <span className="flex justify-between rounded-lg hover:bg-slate-200">
@@ -102,8 +147,13 @@ export function DownloadContents() {
                 </Link>
               </span>
             </div>
-          </div>
-          <div className="flex h-60 w-auto flex-col gap-4 rounded-lg bg-slate-100 p-4 text-blue-500 shadow-sm shadow-blue-300 outline outline-offset-2">
+          </motion.div>
+
+          {/* Card 4: Utilitários */}
+          <motion.div
+            className="flex h-60 w-auto flex-col gap-4 rounded-lg bg-slate-100 p-4 text-blue-500 shadow-sm shadow-blue-300 outline outline-offset-2"
+            variants={itemVariants}
+          >
             <span className="flex justify-center font-alt">Utilitários</span>
             <div className="flex flex-col gap-1 text-base">
               <span className="flex justify-between rounded-lg hover:bg-slate-200">
@@ -137,8 +187,8 @@ export function DownloadContents() {
                 </Link>
               </span>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </>
   )
