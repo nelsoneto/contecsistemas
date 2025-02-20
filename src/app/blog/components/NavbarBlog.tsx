@@ -59,19 +59,19 @@ export default async function NavbarBlog() {
             height={32}
           />
           <div className="max-w-0 text-nowrap px-2 overflow-hidden py-6 text-lg lg:max-w-64">
-            <h1 className="pl-12 text-slate-200 lg:pl-0 text-ellipsis overflow-hidden whitespace-nowrap">
+            <h1 className=" text-slate-200 text-ellipsis overflow-hidden whitespace-nowrap">
               CONTEC SISTEMAS <span className="text-blue-500">|</span>{' '}
               <span className="font-alt">BLOG</span>
             </h1>
           </div>
         </Link>
-        <div className="flex-1 flex justify-center ">
+        <div className="flex-1 flex justify-center">
           <SearcherAlt posts={posts} />
         </div>
         <div className="flex items-center">
           <HamburgerMenu />
         </div>
       </div>
-    </nav>
+    </nav >
   )
 }

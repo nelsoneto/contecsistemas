@@ -1,6 +1,11 @@
 import ConditionalFooterBlog from '@/app/blog/components/ConditionalFooterBlog'
 import NavbarBlog from '@/app/blog/components/NavbarBlog'
+import { Metadata } from 'next'
 import { ReactNode } from 'react'
+
+export const metadata: Metadata = {
+  title: 'Contec | Blog',
+}
 
 export default function BlogLayout({
   children,

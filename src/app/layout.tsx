@@ -1,6 +1,7 @@
 import ConditionalFooter from '@/components/ConditionalFooter'
 import ConditionalNavbar from '@/components/ConditionalNavbar'
 import { Widget } from '@/components/Widget'
+import { Metadata } from 'next'
 import {
   Bai_Jamjuree as BaiJamjuree,
   Roboto_Flex as Roboto,
@@ -14,6 +15,12 @@ const baiJamjuree = BaiJamjuree({
   weight: '700',
   variable: '--font-bai-jamjuree',
 })
+
+export const metadata: Metadata = {
+  title: 'Contec Sistemas',
+  description:
+    'Site oficial da Contec Sistemas, empresa de tecnologia especializada em soluções para gestão de empresas.',
+}
 
 export default function RootLayout({
   children,

@@ -1,11 +1,11 @@
 'use client'
 import { motion } from 'framer-motion'
+import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import whatsAppImg from '../../../public/images/WhatsApp.png'
 import { DownloadContents } from './DownloadContents'
 import { PagePerguntas } from './PagePerguntas'
-import Head from 'next/head'
 
 // Variantes de animação
 const containerVariants = {

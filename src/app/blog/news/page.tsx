@@ -13,6 +13,7 @@ import {
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/components/ui/pagination'
 import { Document } from '@contentful/rich-text-types'
 import { createClient } from 'contentful'
+import { Metadata } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -32,6 +33,10 @@ interface NewsPageProps {
     page?: string
   }
 }
+export const metadata: Metadata = {
+  title: 'Noticias | Blog',
+  description: 'Confira as notícias mais recentes do nosso blog.',
+};
 
 
 export default async function NewsPage({ searchParams }: NewsPageProps) {
@@ -94,8 +99,8 @@ export default async function NewsPage({ searchParams }: NewsPageProps) {
         <meta name="description" content="Confira as últimas notícias do nosso blog." />
         <meta name="keywords" content="blog, notícias, atualizações" />
       </Head>
-      <section className="mt-36 min-h-screen justify-center  px-4 md:px-24 lg:px-44 xl:px-64 pb-44">
-        <div className="sm:flex flex-row justify-between">
+      <section className="mt-36 min-h-screen max-w-full justify-center  px-4 md:px-24 lg:px-44 xl:px-64 pb-44">
+        <div className="sm:flex flex-row justify-between ">
           <h1 className="text-primary mb-10 text-center text-3xl font-bold tracking-tight md:text-4xl">
             Todas as Noticias
           </h1>
@@ -104,12 +109,12 @@ export default async function NewsPage({ searchParams }: NewsPageProps) {
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {!currentPosts ? <div>
             <h1 className="text-primary mb-10 text-center text-3xl font-bold tracking-tight md:text-4xl">
-              Nenhuma noticia encontrada
+              Nenhuma noticia encontrada.
             </h1>
           </div>
             : currentPosts.map((post: Post, index: number) => (
               <Card
-                className="bg-slate-200 overflow-hidden rounded-lg border-none shadow-xl hover:outline hover:outline-offset-2 hover:outline-blue-500"
+                className="bg-gray-100 overflow-hidden rounded-lg border-none shadow-xl hover:outline hover:outline-offset-2 hover:outline-blue-500"
                 key={index}
               >
                 <div className="relative h-48 w-full">

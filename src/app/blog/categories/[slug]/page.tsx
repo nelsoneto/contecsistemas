@@ -13,6 +13,7 @@ type Props = {
   }
 }
 
+
 export const dynamic = 'auto'
 export const fetchCache = 'auto'
 export const revalidate = 10
@@ -56,7 +57,7 @@ export default async function Categories({ params }: Props) {
 
   return (
     <section className="mb-8 max-w-full flex flex-col min-h-screen pt-36 text-center xl:px-96mt-36 justify-center pb-20 px-4 md:px-24 lg:px-44 xl:px-64">
-      <div className='sm:flex flex-row justify-between'>
+      <div className='sm:flex flex-row justify-between '>
         <h1 className="text-primary mb-10 text-center text-3xl font-bold tracking-tight md:text-4xl">
           {slug.charAt(0).toUpperCase() + slug.slice(1)}
         </h1>
