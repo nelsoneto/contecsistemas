@@ -28,7 +28,7 @@ export default function HeroCarousel({ posts }: Props) {
     )
   }
   return (
-    <div className="px-4">
+    <div className="px-0">
       <Carousel
         plugins={[
           Autoplay({

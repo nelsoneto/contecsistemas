@@ -108,7 +108,7 @@ export default function NewsSection({ posts }: Props) {
             </div>
           ))}
         <div className='flex justify-center items-center w-full mt-10'>
-          <Button variant={'midas'} className='xl:w-40 w-full '>
+          <Button variant={'midas'} className='w-full h-16 '>
             <Link href={`/blog/news/`}>Mais notícias</Link>
           </Button>
         </div>

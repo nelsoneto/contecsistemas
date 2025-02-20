@@ -81,6 +81,12 @@ export default async function NewsPage({ searchParams }: NewsPageProps) {
   const endIndex = startIndex + postsPerPage;
   const currentPosts = allPosts.slice(startIndex, endIndex);
 
+  // Loading 
+  if (!currentPosts) {
+    return <div className='flex flex-col w-full items-center justify-center'>Carregando...</div>;
+  }
+
+
   return (
     <>
       <Head>
@@ -96,36 +102,41 @@ export default async function NewsPage({ searchParams }: NewsPageProps) {
           <CategoriesMenu />
         </div>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {currentPosts.map((post: Post, index: number) => (
-            <Card
-              className="bg-slate-200 overflow-hidden rounded-lg border-none shadow-xl hover:outline hover:outline-offset-2 hover:outline-blue-500"
-              key={index}
-            >
-              <div className="relative h-48 w-full">
-                <Link href={`/blog/news/${post.fields.slug}`}>
-                  <Image
-                    src={post.fields.image ? `https:${post.fields.image.fields.file.url}` : '/fallback-image.jpg'}
-                    alt={post.fields.title}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    fill
-                    style={{ objectFit: 'cover' }}
-                    className="rounded-t-lg"
-                  />
-                </Link>
-              </div>
-              <CardHeader>
-                <CardTitle>{post.fields.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-slate-700">{post.fields.description}</CardDescription>
-              </CardContent>
-              <CardFooter>
-                <Button variant="midas" aria-label={`Leia mais sobre ${post.fields.title}`}>
-                  <Link href={`/blog/news/${post.fields.slug}`}>Leia mais</Link>
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
+          {!currentPosts ? <div>
+            <h1 className="text-primary mb-10 text-center text-3xl font-bold tracking-tight md:text-4xl">
+              Nenhuma noticia encontrada
+            </h1>
+          </div>
+            : currentPosts.map((post: Post, index: number) => (
+              <Card
+                className="bg-slate-200 overflow-hidden rounded-lg border-none shadow-xl hover:outline hover:outline-offset-2 hover:outline-blue-500"
+                key={index}
+              >
+                <div className="relative h-48 w-full">
+                  <Link href={`/blog/news/${post.fields.slug}`}>
+                    <Image
+                      src={post.fields.image ? `https:${post.fields.image.fields.file.url}` : '/fallback-image.jpg'}
+                      alt={post.fields.title}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      fill
+                      style={{ objectFit: 'cover' }}
+                      className="rounded-t-lg"
+                    />
+                  </Link>
+                </div>
+                <CardHeader>
+                  <CardTitle>{post.fields.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-slate-700">{post.fields.description}</CardDescription>
+                </CardContent>
+                <CardFooter>
+                  <Button variant="midas" aria-label={`Leia mais sobre ${post.fields.title}`}>
+                    <Link href={`/blog/news/${post.fields.slug}`}>Leia mais</Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
         </div>
 
         {/* Paginação */}
