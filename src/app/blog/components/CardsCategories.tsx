@@ -24,7 +24,7 @@ export default function CardsCategories({ posts }: Props) {
           className="overflow-hidden rounded-lg border-none bg-gray-100 shadow-xl hover:outline hover:outline-offset-2 hover:outline-blue-500"
         >
           <div className="relative h-48 w-full">
-            <Link href={`/blog/categories/${post.fields.slug || ''}`}>
+            <Link href={`/blog/news/${post.fields.slug || ''}`}>
               {post.fields.image && (
                 <Image
                   src={`https:${post.fields.image.fields.file.url}`}
