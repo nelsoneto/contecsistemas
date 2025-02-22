@@ -35,10 +35,9 @@ export default function SearcherAlt({ posts }: Props) {
         <PopoverTrigger asChild>
           <Button
             aria-label="Search"
-            className="border-2 border-slate-500/50 text-xs md:text-base"
+            className="flex w-12 items-center justify-center bg-slate-800 text-start text-xs md:w-36 md:text-base"
           >
             <Search size={20} />
-            <span className="hidden md:inline">Pesquisar</span>
           </Button>
         </PopoverTrigger>
 

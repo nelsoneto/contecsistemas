@@ -99,7 +99,7 @@ export default async function NewsPage({ searchParams }: NewsPageProps) {
         <meta name="description" content="Confira as últimas notícias do nosso blog." />
         <meta name="keywords" content="blog, notícias, atualizações" />
       </Head>
-      <section className="mt-36 min-h-screen max-w-full justify-center  px-4 md:px-24 lg:px-44 xl:px-64 pb-44">
+      <section className="mt-36 min-h-screen max-w-full justify-center px-4 md:px-24 lg:px-44 xl:px-64 pb-44">
         <div className="sm:flex flex-row justify-between ">
           <h1 className="text-primary mb-10 text-center text-3xl font-bold tracking-tight md:text-4xl">
             Todas as Noticias

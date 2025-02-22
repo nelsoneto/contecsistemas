@@ -49,6 +49,13 @@ const CommandInput = React.forwardRef<
         className,
       )}
       {...props}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault()
+          // Execute a ação desejada aqui
+          console.log('Enter key pressed')
+        }
+      }}
     />
   </div>
 ))
@@ -152,4 +159,3 @@ export {
   CommandSeparator,
   CommandShortcut
 }
-

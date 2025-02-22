@@ -6,7 +6,7 @@ import { useState } from 'react'
 
 const Links = [
   { id: 1, name: 'Noticias', href: '/blog/news' },
-  { id: 2, name: 'Sobre', href: '/' },
+  { id: 2, name: 'Site Contec', href: '/' },
 ]
 
 export default function HamburgerMenu() {
@@ -27,10 +27,10 @@ export default function HamburgerMenu() {
           }`}
       >
         {Links.map((link) => (
-          <li key={link.id} className="my-9 md:my-0 md:ml-8">
+          <li key={link.id} className="my-7 md:my-0 md:ml-8">
             <a
               href={link.href}
-              className="flex w-full rounded-md border-2  border-transparent px-3 py-2 ring-offset-blue-500 text-zinc-100 transition-colors hover:bg-slate-800 focus:border-blue-500 focus:outline-none"
+              className="flex w-full rounded-md border-2 border-transparent px-3 py-2 ring-offset-blue-500 text-zinc-100 transition-colors hover:bg-slate-800 focus:border-blue-500 focus:outline-none"
             >
               {link.name}
             </a>
