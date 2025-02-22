@@ -27,7 +27,7 @@ export default function HamburgerMenu() {
           }`}
       >
         {Links.map((link) => (
-          <li key={link.id} className="my-7 md:my-0 md:ml-8">
+          <li key={link.id} className="my-7 pt-4 sm:pt-0 md:my-0 md:ml-8">
             <a
               href={link.href}
               className="flex w-full rounded-md border-2 border-transparent px-3 py-2 ring-offset-blue-500 text-zinc-100 transition-colors hover:bg-slate-800 focus:border-blue-500 focus:outline-none"
