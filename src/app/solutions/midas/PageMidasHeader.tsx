@@ -41,7 +41,7 @@ export function PageMidasHeader() {
 
         {/* Feature Banner */}
         <div className="w-full bg-gradient-to-r from-blue-900 via-sky-800 to-blue-900 p-6 md:py-12 xl:px-72">
-          <p className="mx-auto max-w-4xl text-pretty font-alt text-2xl leading-relaxed xl:text-4xl">
+          <p className="mx-auto max-w-4xl text-pretty font-alt text-3xl leading-relaxed xl:text-4xl">
             Simples de operar, transformando vendas de balcão em um atendimento
             <span className="block font-bold text-cyan-300">
               {' '}

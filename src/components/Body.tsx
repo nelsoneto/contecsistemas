@@ -108,7 +108,7 @@ export function Body() {
 
       {/* Seção de recursos */}
       <div className="gap-10 bg-gradient-to-r from-blue-950 via-blue-800 to-blue-950 text-zinc-300 md:text-sm 2xl:text-2xl">
-        <div className="grid h-auto w-full grid-cols-1 justify-items-center gap-10 px-4 py-14 text-justify md:grid-cols-2 xl:grid-cols-3 xl:gap-8 xl:p-14">
+        <div className="grid h-auto w-full grid-cols-1 justify-items-center gap-10 px-4 py-14 text-justify md:grid-cols-2 md:p-32 xl:grid-cols-3 xl:gap-8 xl:p-52">
           {features.map((feature, index) => (
             <FeatureCard key={index} {...feature} />
           ))}

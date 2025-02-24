@@ -24,7 +24,7 @@ const itemVariants = {
 export function DownloadContents() {
   return (
     <>
-      <div className="flex flex-col items-center justify-center py-10 text-2xl">
+      <div className="flex flex-col items-center justify-center py-10 text-2xl xl:px-64">
         {/* Título com animação */}
         <motion.h1
           className="font-alt text-xl xl:text-3xl"
