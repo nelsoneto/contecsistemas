@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowUpDown, Download, MonitorDown } from 'lucide-react'
+import { Download, MonitorDown } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import anyDeskImg from '../../../public/images/AnyDesk.png'
@@ -62,7 +62,10 @@ export function DownloadContents() {
                 </Link>
               </span>
               <span className="flex justify-center rounded-lg hover:bg-slate-200">
-                <Link href="downloads/AnyDesk.exe" download="AnyDesk.exe">
+                <Link
+                  href="/download/utilitarios/AcessoRemoto_AnyDesk.exe"
+                  download="AcessoRemoto_AnyDesk.exe"
+                >
                   <Image
                     src={anyDeskImg}
                     alt="AnyDesk"
@@ -78,26 +81,46 @@ export function DownloadContents() {
             className="flex h-60 w-auto flex-col gap-4 rounded-lg bg-slate-100 p-4 text-blue-500 shadow-sm shadow-blue-300 outline outline-offset-2"
             variants={itemVariants}
           >
-            <span className="flex justify-center font-alt">MIDAS 2.21</span>
+            <span className="flex justify-center font-alt">Instalação</span>
             <div className="flex flex-col gap-1 text-base">
-              <span className="flex justify-between rounded-lg px-5 hover:bg-slate-200">
+              {/* <span className="flex justify-between rounded-lg px-5 hover:bg-slate-200">
                 <Link
-                  href="downloads/midas_221_firebird5_setup.exe"
+                  href="download/midas/install/midas_221_firebird5_setup.exe"
                   download="midas_221_firebird5_setup.exe"
                   className="flex gap-4 p-2"
                 >
                   <MonitorDown className="" />
-                  <p className="font-bold text-slate-800">Instalação</p>
+                  <p className="font-bold text-slate-800">MIDAS 2.21 FB5</p>
+                </Link>
+              </span> */}
+              <span className="flex justify-between rounded-lg px-5 hover:bg-slate-200">
+                <Link
+                  href="download/midas/install/midas_221_firebird5_setup.exe"
+                  download="midas_221_firebird5_setup.exe"
+                  className="flex gap-2 p-2"
+                >
+                  <MonitorDown className="" />
+                  <p className="font-bold text-slate-800">MIDAS 2.21 FB5.0</p>
                 </Link>
               </span>
               <span className="flex justify-between rounded-lg px-5 hover:bg-slate-200">
                 <Link
-                  href="downloads/midas_221_update.exe"
-                  download="midas_221_update.exe"
+                  href="download/midas/install/midas_221_firebird2_5_setup.exe"
+                  download="midas_221_firebird2_5_setup.exe"
                   className="flex gap-2 p-2"
                 >
-                  <ArrowUpDown />
-                  <p className="font-bold text-slate-800">Atualização</p>
+                  <MonitorDown className="" />
+                  <p className="font-bold text-slate-800">MIDAS 2.21 FB2.5</p>
+                </Link>
+              </span>
+              <span className="flex justify-between rounded-lg px-5 hover:bg-slate-200">
+                <Link
+                  href="download/midas/install/midas_222_firebird5_setup.exe"
+                  download="midas_222_firebird5_setup.exe"
+                  className="flex gap-2 p-2"
+                >
+                  <MonitorDown className="" />
+                  <p className="font-bold text-slate-800">MIDAS 2.22 FB5.0</p>
                 </Link>
               </span>
             </div>
@@ -108,41 +131,29 @@ export function DownloadContents() {
             className="flex h-60 w-auto flex-col gap-4 rounded-lg bg-slate-100 p-4 text-blue-500 shadow-sm shadow-blue-300 outline outline-offset-2"
             variants={itemVariants}
           >
-            <span className="flex justify-center font-alt">Versões</span>
+            <span className="flex justify-center font-alt">Atualização</span>
             <div className="flex flex-col gap-1 text-lg">
               <span className="flex justify-between rounded-lg hover:bg-slate-200">
                 <Link
-                  href="downloads/MIDAS 2.20B2447.zip"
-                  download="MIDAS 2.20B2447.zip"
+                  href="download/midas/update/midas_222_update.exe"
+                  download="midas_222_update.exe"
                   className="flex gap-4 p-2"
                 >
                   <Download className="" />
                   <p className="text-base font-bold text-slate-800">
-                    MIDAS2.20B2447
+                    MIDAS Update 2.22
                   </p>
                 </Link>
               </span>
               <span className="flex justify-between rounded-lg hover:bg-slate-200">
                 <Link
-                  href="downloads/MIDAS 2.20B2446.zip"
-                  download="MIDAS 2.20B2446.zip"
+                  href="download/midas/update/midas_221_update.exe"
+                  download="midas_221_update.exe"
                   className="flex gap-4 p-2"
                 >
                   <Download className="" />
                   <p className="text-base font-bold text-slate-800">
-                    MIDAS2.20B2446
-                  </p>
-                </Link>
-              </span>
-              <span className="flex justify-between rounded-lg hover:bg-slate-200">
-                <Link
-                  href="downloads/MIDAS 2.19R1B2418.zip"
-                  download="MIDAS 2.19R1B2418.zip"
-                  className="flex gap-2 p-2"
-                >
-                  <Download />
-                  <p className="text-base font-bold text-slate-800">
-                    MIDAS2.19R1B2418
+                    MIDAS Update 2.21
                   </p>
                 </Link>
               </span>
@@ -158,27 +169,27 @@ export function DownloadContents() {
             <div className="flex flex-col gap-1 text-base">
               <span className="flex justify-between rounded-lg hover:bg-slate-200">
                 <Link
-                  href="downloads/Firebird-2.5.9.27139_0_Win32.exe"
-                  download="Firebird-2.5.9.27139_0_Win32.exe"
+                  href="download/utilitarios/Produtos.exe"
+                  download="Produtos.exe"
                   className="flex gap-2 p-2"
                 >
                   <Download className="" />
-                  <p className="font-bold text-slate-800">Firebird-2.5.9</p>
+                  <p className="font-bold text-slate-800">Produtos.exe</p>
                 </Link>
               </span>
               <span className="flex justify-between rounded-lg hover:bg-slate-200">
                 <Link
-                  href="downloads/Firebird-5.0.0.1306-0-windows-x64.exe"
-                  download="Firebird-5.0.0.1306-0-windows-x64.exe"
+                  href="download/utilitarios/ibexpert.exe"
+                  download="ibexpert.exe"
                   className="flex gap-2 p-2"
                 >
                   <Download />
-                  <p className="font-bold text-slate-800">Firebird-5.0.0</p>
+                  <p className="font-bold text-slate-800">ibexpert</p>
                 </Link>
               </span>
               <span className="flex justify-between rounded-lg hover:bg-slate-200">
                 <Link
-                  href="downloads/ifb.exe"
+                  href="download/utilitarios/ifb.exe"
                   download="ifb.exe"
                   className="flex gap-2 p-2"
                 >
