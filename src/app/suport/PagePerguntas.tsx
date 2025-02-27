@@ -50,11 +50,10 @@ export function PagePerguntas() {
             </AccordionItem>
             <AccordionItem value="item-3">
               <AccordionTrigger className="text-blue-400">
-                O suporte local é cobrado?
+                O MIDAS gera etiquetas?
               </AccordionTrigger>
               <AccordionContent>
-                Não. O suporte local esta incluso na mensalidade, mas pedimos
-                para agendar com 1 dia de antecedencia.
+                Sim. O MIDAS gera etiquetas de código de barras para produtos.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4">

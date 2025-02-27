@@ -1,7 +1,23 @@
+'use client'
 import midasIcon from '@/public/images/midas-icone.png'
+import midasComprovante from '@/public/images/midas_comprovante.png'
+import midasTelaPrincipal from '@/public/images/midas_tela_principal.png'
+import midasTelaVedas from '@/public/images/midas_tela_vendas.png'
 import Image from 'next/image'
+import { useState } from 'react'
+import Lightbox from 'react-image-lightbox'
+import 'react-image-lightbox/style.css'
 
 export function PageMidasHeader() {
+  const [isOpen, setIsOpen] = useState(false)
+  const [photoIndex, setPhotoIndex] = useState(0)
+
+  const images = [
+    midasTelaPrincipal.src,
+    midasTelaVedas.src,
+    midasComprovante.src,
+  ]
+
   return (
     <section className="flex flex-col items-center">
       {/* Header Section */}
@@ -18,25 +34,26 @@ export function PageMidasHeader() {
             MIDAS
           </h1>
         </div>
-
-        {/* <h2 className="hidden text-center font-alt xl:block xl:max-w-2xl xl:text-4xl 2xl:text-5xl">
-          A nossa solução mais{' '}
-          <span className="bg-gradient-to-r from-cyan-500 via-sky-400 to-blue-300 bg-clip-text px-1 text-transparent">
-            completa para sua empresa
-          </span>
-        </h2> */}
       </header>
       {/* Main Content */}
       <div className="relative w-full">
-        <div className="relative h-[400px] w-full bg-midas bg-cover bg-center xl:h-screen">
-          {/* Se for adicionar a imagem posteriormente:
-          <Image
-            src={erpImg}
-            alt="Interface do Sistema MIDAS"
-            fill
-            className="object-cover object-center"
-            sizes="(max-width: 768px) 100vw, 50vw"
-          /> */}
+        <div className="flex-row justify-items-center gap-4 space-y-4 p-10 md:flex md:items-center md:justify-center">
+          {images.map((src, index) => (
+            <div key={index} className="relative">
+              <Image
+                src={src}
+                alt={`Interface do Sistema MIDAS ${index + 1}`}
+                width={400}
+                height={400}
+                className="border-spacing-8 cursor-pointer rounded-md object-cover object-center"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                onClick={() => {
+                  setPhotoIndex(index)
+                  setIsOpen(true)
+                }}
+              />
+            </div>
+          ))}
         </div>
 
         {/* Feature Banner */}
@@ -50,6 +67,21 @@ export function PageMidasHeader() {
           </p>
         </div>
       </div>
+
+      {isOpen && (
+        <Lightbox
+          mainSrc={images[photoIndex]}
+          nextSrc={images[(photoIndex + 1) % images.length]}
+          prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+          onCloseRequest={() => setIsOpen(false)}
+          onMovePrevRequest={() =>
+            setPhotoIndex((photoIndex + images.length - 1) % images.length)
+          }
+          onMoveNextRequest={() =>
+            setPhotoIndex((photoIndex + 1) % images.length)
+          }
+        />
+      )}
     </section>
   )
 }

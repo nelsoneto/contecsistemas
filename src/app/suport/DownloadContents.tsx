@@ -51,8 +51,8 @@ export function DownloadContents() {
             <div className="flex flex-col gap-2 py-4 text-base">
               <span className="flex justify-center rounded-lg hover:bg-slate-200">
                 <Link
-                  href="downloads/AcessoRemoto.exe"
-                  download="AcessoRemoto.exe"
+                  href="/download/utilitarios/AcessoRemoto_TeamViewer.exe"
+                  download="AcessoRemoto_TeamViewer.exe"
                 >
                   <Image
                     src={teamViewerImg}

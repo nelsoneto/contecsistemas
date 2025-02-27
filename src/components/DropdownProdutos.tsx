@@ -16,6 +16,7 @@ const categories = [
   { id: 2, name: 'PDVMIDAS', href: '/' },
   { id: 3, name: 'Frigorifico', href: '/' },
   { id: 4, name: 'Minério', href: '/' },
+  { id: 5, name: 'Força de Vendas', href: '/' },
 ]
 
 export function DropdownProdutos() {
