@@ -25,7 +25,7 @@ export function Hero() {
           </p>
           <Link
             href="/solutions/midas"
-            className="mb-6 rounded-lg bg-blue-600 px-4 py-3 text-center text-xl text-zinc-100 transition-colors hover:bg-blue-800"
+            className="rounded-lg bg-blue-600 px-8 py-4 text-center text-xl text-zinc-100 transition-colors hover:bg-blue-800"
           >
             Saiba mais
           </Link>
@@ -34,7 +34,7 @@ export function Hero() {
           <Image
             alt="city"
             src={heroImg}
-            className="h-auto w-auto rounded-xl object-cover"
+            className="h-full w-full rounded-xl object-cover"
           />
         </div>
       </div>

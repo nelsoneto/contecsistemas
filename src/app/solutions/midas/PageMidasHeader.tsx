@@ -19,9 +19,9 @@ export function PageMidasHeader() {
   ]
 
   return (
-    <section className="flex flex-col items-center">
+    <section className="mx-4 flex flex-col items-center rounded-md bg-slate-900">
       {/* Header Section */}
-      <header className="flex h-60 w-full items-center justify-center gap-4 bg-gradient-to-r from-blue-900 via-sky-800 to-blue-900 pt-16 2xl:h-80">
+      <header className="pb-38 mb-10 flex h-auto w-full flex-col items-center justify-center gap-4 pt-44">
         <div className="flex items-center gap-4">
           <Image
             src={midasIcon}
@@ -30,14 +30,23 @@ export function PageMidasHeader() {
             quality={80}
             priority
           />
-          <h1 className="bg-gradient-to-r from-cyan-300 via-sky-100 to-blue-300 bg-clip-text px-1 font-alt text-4xl text-transparent md:text-6xl">
+          <h1 className="bg-gradient-to-r from-cyan-500 via-sky-300 to-blue-500 bg-clip-text px-1 font-alt text-4xl text-transparent md:text-6xl">
             MIDAS
           </h1>
+        </div>
+        {/* Feature Banner */}
+        <div className="mb-10 w-full p-6 md:py-12 xl:px-72">
+          <p className="text-center font-alt text-3xl leading-relaxed text-slate-300 xl:text-4xl">
+            Simples de operar, transformando vendas de balcão em um atendimento
+            <span className="block bg-gradient-to-r from-cyan-500 via-sky-300 to-blue-500 bg-clip-text font-bold text-transparent">
+              rápido, prático, eficiente e seguro
+            </span>
+          </p>
         </div>
       </header>
       {/* Main Content */}
       <div className="relative w-full">
-        <div className="flex-row justify-items-center gap-4 space-y-4 p-10 md:flex md:items-center md:justify-center">
+        {/* <div className="flex-row justify-items-center gap-4 space-y-4 p-10 md:flex md:items-center md:justify-center">
           {images.map((src, index) => (
             <div key={index} className="relative">
               <Image
@@ -54,18 +63,17 @@ export function PageMidasHeader() {
               />
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Feature Banner */}
-        <div className="w-full bg-gradient-to-r from-blue-900 via-sky-800 to-blue-900 p-6 md:py-12 xl:px-72">
-          <p className="mx-auto max-w-4xl text-pretty font-alt text-3xl leading-relaxed xl:text-4xl">
+        {/* <div className="mb-10 w-full p-6 md:py-12 xl:px-72">
+          <p className="text-center font-alt text-3xl leading-relaxed text-slate-300 xl:text-4xl">
             Simples de operar, transformando vendas de balcão em um atendimento
-            <span className="block font-bold text-cyan-300">
-              {' '}
+            <span className="block bg-gradient-to-r from-cyan-500 via-sky-300 to-blue-500 bg-clip-text font-bold text-transparent">
               rápido, prático, eficiente e seguro
             </span>
           </p>
-        </div>
+        </div> */}
       </div>
 
       {isOpen && (

@@ -75,7 +75,7 @@ export function PageMidasHero() {
 
   return (
     <motion.section
-      className="mx-auto max-w-7xl px-4 py-8 md:px-24 lg:px-44"
+      className="mx-auto mb-10 max-w-7xl px-4 py-8 md:px-24 lg:px-28"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -86,9 +86,8 @@ export function PageMidasHero() {
           <span className="text-blue-400">MIDAS</span>
         </h2>
       </motion.header>
-
       <motion.div
-        className="grid gap-8 md:grid-cols-2"
+        className="mb-10 grid gap-2 md:grid-cols-2 lg:gap-8"
         variants={containerVariants}
       >
         {features.map((feature, index) => (

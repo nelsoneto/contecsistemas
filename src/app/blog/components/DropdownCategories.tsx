@@ -1,4 +1,5 @@
 'use client'
+/* eslint-disable prettier/prettier */
 
 import { Button } from '@/components/ui/button'
 import {
@@ -26,11 +27,11 @@ export default function DropdownCategories({
           Categorias
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="max-h-64 w-36 overflow-y-auto bg-slate-900">
+      <DropdownMenuContent className="max-h-64 w-52 overflow-y-auto bg-slate-900">
         <DropdownMenuLabel className="p-2 text-slate-200">
           Categorias
         </DropdownMenuLabel>
-        <DropdownMenuSeparator className="bg-blue-400/40" />
+        <DropdownMenuSeparator className="bg-blue-500/60 h-0.5" />
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           {categories.map((category, index) => (

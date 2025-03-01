@@ -189,7 +189,7 @@ export function DownloadContents() {
               </span>
               <span className="flex justify-between rounded-lg hover:bg-slate-200">
                 <Link
-                  href="download/utilitarios/ifb.exe"
+                  href="download/utilitarios/IFB.exe"
                   download="ifb.exe"
                   className="flex gap-2 p-2"
                 >

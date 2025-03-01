@@ -25,16 +25,16 @@ export function DropdownProdutos() {
       <DropdownMenuTrigger asChild>
         <Button>Produtos</Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-52 bg-slate-900">
-        <DropdownMenuLabel className="p-2 font-alt text-base text-slate-200">
-          Produtos
+      <DropdownMenuContent className="w-52 bg-slate-800">
+        <DropdownMenuLabel className="p-4 font-alt text-base text-slate-200">
+          SOLUÇÕES
         </DropdownMenuLabel>
-        <DropdownMenuSeparator className="bg-blue-400/40" />
+        <DropdownMenuSeparator className="h-0.5 bg-blue-500/60" />
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           {categories.map((category, id) => (
             <Link key={id} href={category.href}>
-              <DropdownMenuItem className="cursor-pointer p-2 text-base hover:bg-slate-800">
+              <DropdownMenuItem className="cursor-pointer px-5 py-3 font-alt text-base hover:bg-slate-900">
                 {category.name.charAt(0).toUpperCase() + category.name.slice(1)}
               </DropdownMenuItem>
             </Link>

@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 'use client'
 
+import { motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
 
@@ -19,7 +20,13 @@ export default function HamburgerMenu() {
         onClick={() => setOpen(!open)}
         className="absolute right-8 top-3 h-7 w-7 cursor-pointer py-4 md:hidden"
       >
-        {open ? <X /> : <Menu />}
+        <motion.div
+          initial={{ rotate: 0 }}
+          animate={{ rotate: open ? 90 : 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          {open ? <X /> : <Menu />}
+        </motion.div>
       </div>
       {/* link items */}
       <ul
