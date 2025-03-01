@@ -21,13 +21,14 @@ const buttonVariants = cva(
         ghost:
           'hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-slate-50',
         link: 'text-slate-900 underline-offset-4 hover:underline dark:text-slate-50',
-        midas: 'rounded-sm bg-blue-600 font-sans px-4 py-3 text-center text-base text-zinc-100 transition-colors hover:bg-blue-800',
+        midas: 'bg-blue-600 text-center font-alt text-zinc-100 transition-colors hover:bg-blue-800',
       },
       size: {
         default: 'h-10 px-4 py-2',
         sm: 'h-9 rounded-md px-3',
         lg: 'h-11 rounded-md px-8',
         icon: 'h-10 w-10',
+        midas: 'h-13 rounded-md px-[32px] py-[12px]',
       },
     },
     defaultVariants: {

@@ -98,7 +98,7 @@ export default function NewsSection({ posts }: Props) {
                 ) : null}
                 {/* Botão */}
                 <div className="flex flex-wrap gap-x-2">
-                  <Button variant={'midas'}>
+                  <Button variant='midas' size='midas'>
                     <Link href={`/blog/news/${post.fields.slug}`}>
                       Ler mais
                     </Link>
@@ -108,7 +108,7 @@ export default function NewsSection({ posts }: Props) {
             </div>
           ))}
         <div className='flex justify-center items-center w-full mt-10'>
-          <Button variant={'midas'} className='w-full h-16 '>
+          <Button variant='midas' size='midas' className='w-full h-16 '>
             <Link href={`/blog/news/`}>Mais notícias</Link>
           </Button>
         </div>

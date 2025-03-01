@@ -23,7 +23,7 @@ export default function HamburgerMenu() {
         <motion.div
           initial={{ rotate: 0 }}
           animate={{ rotate: open ? 90 : 0 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.1 }}
         >
           {open ? <X /> : <Menu />}
         </motion.div>
@@ -37,7 +37,7 @@ export default function HamburgerMenu() {
           <li key={link.id} className="my-7 pt-4 sm:pt-0 md:my-0 md:ml-8">
             <a
               href={link.href}
-              className="flex w-full rounded-md border-2 border-transparent px-3 py-2 ring-offset-blue-500 text-zinc-100 transition-colors hover:bg-slate-800 focus:border-blue-500 focus:outline-none"
+              className="flex w-full rounded-md border-2 border-transparent px-8 py-3 ring-offset-blue-500 text-zinc-100 transition-colors hover:bg-slate-800 focus:border-blue-500 focus:outline-none"
             >
               {link.name}
             </a>

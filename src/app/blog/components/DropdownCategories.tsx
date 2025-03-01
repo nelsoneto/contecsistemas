@@ -22,7 +22,7 @@ export default function DropdownCategories({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button>
+        <Button variant="midas" size="midas">
           <BarChartHorizontalIcon />
           Categorias
         </Button>

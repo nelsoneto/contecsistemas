@@ -1,10 +1,10 @@
 /* eslint-disable prettier/prettier */
 'use client'
-import { motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
 
 import { DropdownProdutos } from '@/components/DropdownProdutos'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -27,10 +27,11 @@ export function Navbar() {
           <Image
             src="/images/logo.svg"
             alt="Contec Sistemas"
-            width={32}
-            height={32}
+            width={28}
+            height={28}
+            className="h-auto w-auto object-cover"
           />
-          <span className="max-w-0 overflow-hidden text-nowrap px-2 text-xl lg:max-w-56">
+          <span className="max-w-0 overflow-hidden text-nowrap px-2 text-lg lg:max-w-64">
             <span className="overflow-hidden text-ellipsis whitespace-nowrap pl-12 text-slate-200 lg:pl-0">
               CONTEC SISTEMAS
             </span>
@@ -45,44 +46,31 @@ export function Navbar() {
           <motion.div
             initial={{ rotate: 0 }}
             animate={{ rotate: open ? 90 : 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.1 }}
           >
             {open ? <X /> : <Menu />}
           </motion.div>
         </div>
+
         {/* link items */}
-        <motion.ul
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: open ? 1 : 0, y: open ? 0 : -20 }}
-          transition={{ duration: 0.5 }}
-          className={`absolute left-0 z-[-1] w-full justify-items-center bg-slate-900 pb-4 transition-all duration-500 ease-linear md:static md:z-auto md:flex md:w-auto md:items-center md:pb-0 md:pl-0 ${open ? 'top-12' : 'top-[-490px]'}`}
+        <ul
+          className={`absolute left-0 w-full justify-items-center bg-slate-900 pb-4 md:static md:z-auto md:flex md:w-auto md:items-center md:bg-transparent md:pb-0 md:pl-0 ${open ? 'top-16' : 'hidden'
+            }`}
         >
           {Links.map((link) => (
-            <motion.li
-              key={link.id}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.3, delay: link.id * 0.1 }}
-              className="my-7 pt-4 sm:pt-0 md:my-0 md:ml-8"
-            >
+            <li key={link.id} className="my-7 pt-4 sm:pt-0 md:my-0 md:ml-8">
               <a
                 href={link.link}
-                className="flex w-full rounded-md border-2 border-transparent px-3 py-2 text-zinc-100 transition-colors hover:bg-slate-800 focus:border-blue-500 focus:outline-none"
+                className="flex w-full rounded-md border-2 border-transparent px-8 py-3 text-zinc-100 transition-colors hover:bg-slate-800 focus:border-blue-500 focus:outline-none"
               >
                 {link.name}
               </a>
-            </motion.li>
+            </li>
           ))}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3, delay: Links.length * 0.1 }}
-            className="my-9 flex space-y-10 font-semibold md:my-0 md:ml-8"
-          >
+          <div className="my-9 flex space-y-10 font-semibold md:my-0 md:ml-8">
             <DropdownProdutos />
-          </motion.div>
-        </motion.ul>
-        {/* button */}
+          </div>
+        </ul>
       </div>
     </div>
   )

@@ -136,7 +136,7 @@ export default async function NewsPage({ searchParams }: NewsPageProps) {
                   <CardDescription className="text-slate-700">{post.fields.description}</CardDescription>
                 </CardContent>
                 <CardFooter>
-                  <Button variant="midas" aria-label={`Leia mais sobre ${post.fields.title}`}>
+                  <Button variant="midas" size="midas" aria-label={`Leia mais sobre ${post.fields.title}`}>
                     <Link href={`/blog/news/${post.fields.slug}`}>Leia mais</Link>
                   </Button>
                 </CardFooter>
