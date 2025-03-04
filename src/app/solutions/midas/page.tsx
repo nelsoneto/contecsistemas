@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { PageMidasHeader } from './PageMidasHeader'
 import { PageMidasHero } from './PageMidasHero'
-import { TabsDemo } from './SettingsTabs/TabsDemo'
+import { MidasModal } from './SettingsTabs/ModalMidas'
 
 export default function PageMidas() {
   return (
@@ -12,9 +12,8 @@ export default function PageMidas() {
       </Head>
       <div className="mx-auto max-h-max w-full text-slate-300">
         <PageMidasHeader />
-        <TabsDemo />
+        <MidasModal />
         <PageMidasHero />
-        {/* <SettingsTabs /> */}
       </div>
     </>
   )

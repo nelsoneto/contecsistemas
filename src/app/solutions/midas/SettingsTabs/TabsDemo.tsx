@@ -58,8 +58,8 @@ export function TabsDemo() {
         >
           <TabsList aria-label="Selecione uma categoria">
             {TabData.map((tab) => (
-              <motion.div key={tab.value} variants={itemVariants}>
-                <TabsTrigger value={tab.value}>{tab.title}</TabsTrigger>
+              <motion.div key={tab.id} variants={itemVariants}>
+                <TabsTrigger value={tab.id.toString()}>{tab.title}</TabsTrigger>
               </motion.div>
             ))}
           </TabsList>
@@ -67,7 +67,7 @@ export function TabsDemo() {
 
         {/* Anima o conteúdo das abas */}
         {TabData.map((tab) => (
-          <TabsContent key={tab.value} value={tab.value}>
+          <TabsContent key={tab.id} value={tab.id.toString()}>
             <motion.div
               variants={cardVariants}
               initial="hidden"
@@ -76,7 +76,7 @@ export function TabsDemo() {
             >
               <Card className="mb-4 bg-slate-900 text-gray-400">
                 <CardHeader>
-                  <CardTitle className="bg-gradient-to-r from-blue-400 via-sky-400 to-emerald-300 bg-clip-text font-alt text-2xl text-transparent transition-all duration-300 hover:from-blue-500 hover:via-sky-500 hover:to-emerald-400 sm:text-3xl">
+                  <CardTitle className="bg-gradient-to-r from-blue-400 via-sky-400 to-emerald-300 bg-clip-text font-alt text-2xl text-transparent transition-all duration-300 hover:from-blue-500 hover:via-sky-500 hover:to-emerald-400 md:text-4xl">
                     {tab.title}
                   </CardTitle>
                   <CardDescription className="text-xl">

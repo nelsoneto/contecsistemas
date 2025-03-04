@@ -1,8 +1,9 @@
 export const TabData = [
   {
-    value: 'tab1',
-    title: 'Cadastros',
-    heading: 'Cadastro de Pessoas',
+    id: 1,
+    title: 'Cadastros Pessoas',
+    heading:
+      'Todo o cadastro de clientes, funcionários, fornecedores, transportes, convenio, cooperados e usuários em um só lugar. Você pode cadastrar pessoas físicas e jurídicas, com informações detalhadas e foto. Além disso, é possivel cadastrar dados do transportador, como placa e dados do veículo, motorista e documentos, e muito mais!',
     imageSrc: '/images/Cadastro.png',
     items: [
       'Cadastro de funcionários, usuários, clientes e fornecedores',
@@ -18,9 +19,10 @@ export const TabData = [
     ],
   },
   {
-    value: 'tab2',
-    title: 'Produtos/Serviços',
-    heading: 'Produtos / Serviços',
+    id: 2,
+    title: 'Produtos / Serviços',
+    heading:
+      'Você pode cadastrar produtos e serviços, com informações detalhadas e foto. Além disso, é possivel cadastrar código de barras e consultar no GTIN. É possível cadastrar várias seções, marcas, modelos, cors e tamanhos para cada produto. Você pode controlar a unidade de medida principal e secundária com códigos de barras diferentes e muito mais!',
     imageSrc: '/images/Produto.png',
     items: [
       'Cadastro de produtos e serviços',
@@ -37,9 +39,10 @@ export const TabData = [
     ],
   },
   {
-    value: 'tab3',
+    id: 3,
     title: 'Pedido de venda',
-    heading: 'Saídas / Vendas',
+    heading:
+      'No pedido de venda você pode fazer orçamentos, ordem de serviços e vendas de forma prática e simples, todos possuem comprovantes ao fechar o pedido. Você pode parcelar o pagamento, gerar duplicata, comissão de vendas, gerar documentos fiscais, controle de entrega e trocas.',
     imageSrc: '/images/Vendas.png',
     items: [
       'Prazo de pagamento',
@@ -55,9 +58,10 @@ export const TabData = [
     ],
   },
   {
-    value: 'tab4',
+    id: 4,
     title: 'Ordem de Serviços',
-    heading: 'Ordem de Serviço',
+    heading:
+      'Ordem de Serviço é um tipo de pedido onde você pode lançar produtos e serviços realizados e gerar documentos fiscais separados por NF-e e NFS-e (Nota Fiscal de Serviço Eletrônica).',
     imageSrc: '/images/OS.png',
     items: [
       'Lançamento de produtos e serviços',
@@ -69,9 +73,10 @@ export const TabData = [
     ],
   },
   {
-    value: 'tab5',
+    id: 5,
     title: 'PDV',
-    heading: 'Ponto de Vendas',
+    heading:
+      'Conhecido como Ponto de Vendas, mais utilizados em supermercados. O PDV é um software que permite a realização de vendas rápidas com emissão de NFC-e (Nota Fiscal do Consumidor Eletrônica). Possui integração com TEF, balança, gaveta, vale troco e pagamento com QR-Code PIX,e emissão de movimento de caixa por turno.',
     imageSrc: '/images/PDV.png',
     items: [
       'Emissão de NFC-e',
@@ -83,9 +88,10 @@ export const TabData = [
     ],
   },
   {
-    value: 'tab6',
+    id: 6,
     title: 'NF-e',
-    heading: 'Nota Fiscal Eletronica',
+    heading:
+      'As notas podem serem emitidas de forma simplificada, com visualização de espelho e podendo ser editadas para correções rápidsa e fáceis antes da transmissão.',
     imageSrc: '/images/NFe.png',
     items: [
       'Emissão de NF-e',
@@ -100,9 +106,10 @@ export const TabData = [
     ],
   },
   {
-    value: 'tab7',
+    id: 7,
     title: 'NFS-e',
-    heading: 'Nota Fiscal de Serviço',
+    heading:
+      'Nota Fiscal de Serviço é um documento fiscal especifico para prestadores de serviços. A NFS-e é emitida pelo MIDAS com integração com o software do portal municipal.',
     imageSrc: '/images/NSFe.png',
     items: [
       'Emissão de NFS-e simplificado',
@@ -112,9 +119,10 @@ export const TabData = [
     ],
   },
   {
-    value: 'tab8',
+    id: 8,
     title: 'Central de Caixa',
-    heading: 'Central de Caixa',
+    heading:
+      'A central de caixa permite que você coloque um funcionário de caixa para controle sobre todas as pré-vendas e orçamentos feitos nos balcões, agilizando o recebimentos, fechamento de caixa e abrimento de caixa, emissões de documentos fiscais e relatórios.',
     imageSrc: '/images/Central.png',
     items: [
       'Fechamento de pedido pre-venda e orçamento',
@@ -126,9 +134,10 @@ export const TabData = [
     ],
   },
   {
-    value: 'tab9',
-    title: 'Entradas/Compras',
-    heading: 'Entradas / Compras',
+    id: 9,
+    title: 'Entradas / Compras',
+    heading:
+      'Lançamento de notas pratico com download dos XML e manifestação de notas. Além disso, é possível converter unidade de medida, atualizar custo e preço de venda, lançar produtos com ICMS-ST e muito mais!',
     imageSrc: '/images/Entrada.png',
     items: [
       'Importação de XML',
@@ -142,9 +151,10 @@ export const TabData = [
     ],
   },
   {
-    value: 'tab10',
+    id: 10,
     title: 'Relatórios',
-    heading: 'Relatórios',
+    heading:
+      'O MIDAS conta com mais de 100 relatórios específicos com filtros e formatos personalizados ao salvar em PDF, Excel e Word.',
     imageSrc: '/images/Relatorios.png',
     items: [
       'Movimento e giro de produtos',
@@ -158,9 +168,10 @@ export const TabData = [
     ],
   },
   {
-    value: 'tab11',
+    id: 11,
     title: 'Industrialização',
-    heading: 'Industrialização',
+    heading:
+      'Tenha controle da produção dos produtos com lançamento de insumos e materias primas com controle de estoque e custos.  ',
     imageSrc: '/images/Transformacao.png',
     items: [
       'Cadastro de matéria prima e produto acabado',

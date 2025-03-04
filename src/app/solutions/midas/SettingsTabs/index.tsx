@@ -32,7 +32,7 @@ const contentVariants = {
 }
 
 export function SettingsTabs() {
-  const [currentTab, setCurrentTab] = useState(TabData[0].value)
+  const [currentTab, setCurrentTab] = useState<string>(TabData[0].id.toString())
   const [isUserTabbing, setIsUserTabbing] = useState(false) // Estado para rastrear interações
   const isInitialRender = useRef(true) // Ref para rastrear a primeira renderização
   const tabRefs = useRef<TabRefs>({})
@@ -61,7 +61,7 @@ export function SettingsTabs() {
 
   // Função para lidar com a seleção de abas
   const handleTabChange = (tabValue: string) => {
-    setCurrentTab(tabValue)
+    setCurrentTab(tabValue.toString())
     setIsUserTabbing(true) // Marca que o usuário está interagindo
   }
 
@@ -70,7 +70,7 @@ export function SettingsTabs() {
       value={currentTab}
       onValueChange={handleTabChange} // Usa a nova função
       className="h-auto w-full bg-slate-800 py-10 text-center"
-      defaultValue={TabData[0].value}
+      defaultValue={TabData[0].id.toString()}
     >
       {/* Lista de abas */}
       <Tabs.List
@@ -84,12 +84,12 @@ export function SettingsTabs() {
           animate="visible"
         >
           {TabData.map((tab) => (
-            <motion.div key={tab.value} variants={tabItemVariants}>
+            <motion.div key={tab.id} variants={tabItemVariants}>
               <TabItem
-                value={tab.value}
+                value={tab.id.toString()}
                 title={tab.title}
-                isSelected={currentTab === tab.value}
-                onClick={() => handleTabChange(tab.value)} // Usa a nova função
+                isSelected={currentTab === tab.id.toString()}
+                onClick={() => handleTabChange(tab.id.toString())} // Usa a nova função
               />
             </motion.div>
           ))}
@@ -99,11 +99,11 @@ export function SettingsTabs() {
       {/* Conteúdo das abas */}
       {TabData.map((tab) => (
         <Tabs.Content
-          key={tab.value}
-          value={tab.value}
+          key={tab.id}
+          value={tab.id.toString()}
           className="tabs-content"
           ref={(el) => {
-            tabRefs.current[tab.value] = el
+            tabRefs.current[tab.id] = el
           }}
         >
           <motion.div
