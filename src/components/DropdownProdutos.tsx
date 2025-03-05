@@ -24,7 +24,7 @@ export function DropdownProdutos() {
           Produtos
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="mt-6 w-52 bg-slate-800">
+      <DropdownMenuContent className="mt-6 w-52 bg-slate-900">
         {/* <DropdownMenuLabel className="p-4 font-alt text-base text-slate-200">
           SOLUÇÕES
         </DropdownMenuLabel>
@@ -33,7 +33,7 @@ export function DropdownProdutos() {
         <DropdownMenuGroup>
           {categories.map((category, id) => (
             <Link key={id} href={category.href}>
-              <DropdownMenuItem className="cursor-pointer px-8 py-3 font-alt text-base hover:bg-slate-900">
+              <DropdownMenuItem className="cursor-pointer px-8 py-3 font-alt text-base hover:bg-slate-800">
                 {category.name.charAt(0).toUpperCase() + category.name.slice(1)}
               </DropdownMenuItem>
             </Link>

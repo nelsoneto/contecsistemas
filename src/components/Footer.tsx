@@ -65,7 +65,7 @@ export function Footer() {
 
         {/* Segments Section */}
         <div className="flex flex-col gap-2">
-          <h2 className="font-alt text-blue-400">Seguimentos</h2>
+          <h2 className="font-alt text-blue-400">Segmentos</h2>
           {segments.map((segment, index) => (
             <a key={index} href={segment.href} className="hover:underline">
               {segment.label}

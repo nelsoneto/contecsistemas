@@ -29,7 +29,7 @@ export default function NewsSection({ posts }: Props) {
   console.log(limitedPosts)
 
   return (
-    <section className="my-10">
+    <section className="my-10 bg-gray-900 rounded-md p-8">
       <div className="flex items-center justify-between">
         <Link href={'/blog/news'} className="text-primary text-3xl font-bold">
           Últimas Notícias
@@ -45,10 +45,10 @@ export default function NewsSection({ posts }: Props) {
           limitedPosts.map((post, index) => (
             <div
               key={post.sys.id}
-              className={`flex flex-col items-center justify-center gap-x-6 pb-10 ${index !== posts.length - 1 ? 'border-b border-gray-200/20' : ''
-                } md:flex-row`}
+              className={`flex flex-col items-center justify-center gap-x-6 gap-4 pb-10 ${index !== posts.length - 1 ? 'border-b border-gray-200/20' : ''
+                } xl:flex-row`}
             >
-              <div className="flex flex-col md:w-1/2">
+              <div className="flex flex-col xl:w-3/6">
                 {post.fields.image && (
                   <Image
                     src={`https:${post.fields.image.fields.file.url}`}
@@ -59,7 +59,7 @@ export default function NewsSection({ posts }: Props) {
                   />
                 )}
               </div>
-              <div className="flex flex-col gap-y-4 md:w-1/2 md:gap-y-6">
+              <div className="flex flex-col gap-y-4 xl:w-1/2 md:gap-y-6">
                 <h4 className="text-primary text-2xl font-bold">
                   {post.fields.title}
                 </h4>

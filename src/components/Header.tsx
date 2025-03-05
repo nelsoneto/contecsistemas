@@ -17,7 +17,7 @@ export function Header() {
                 <svg
                   viewBox="0 0 286 73"
                   fill="none"
-                  className="absolute -left-2 -right-2 -top-2 bottom-0 translate-y-1"
+                  className="absolute -left-4 -right-3 -top-4 bottom-0 translate-y-1 md:-left-6 md:-right-4 md:-top-6 md:bottom-0 md:translate-y-1"
                 >
                   <motion.path
                     initial={{ pathLength: 0 }}
@@ -26,9 +26,9 @@ export function Header() {
                       duration: 1.25,
                       ease: 'easeInOut',
                     }}
-                    d="M142.293 1C106.854 16.8908 6.08202 7.17705 1.23654 43.3756C-2.10604 68.3466 29.5633 73.2652 122.688 71.7518C215.814 70.2384 316.298 70.689 275.761 38.0785C230.14 1.37835 97.0503 24.4575 52.9384 1"
+                    d="M 100 20 C 91 21 15 21 11 45 C 9 71 29.5633 73.2652 122.688 71.7518 C 215.814 70.2384 267 80 271 51 C 276 15 100 20 100 20"
                     stroke="#3770db"
-                    strokeWidth="3"
+                    strokeWidth="5"
                   />
                 </svg>
               </span>{' '}

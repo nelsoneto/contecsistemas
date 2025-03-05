@@ -7,11 +7,11 @@ import {
 } from '@/components/ui/carousel'
 import Autoplay from 'embla-carousel-autoplay'
 import Link from 'next/link'
-import { ClipLoader } from 'react-spinners'
 
 import { Post } from '@/app/blog/interfaces/post'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
+import { motion } from 'framer-motion'
 import { CalendarIcon } from 'lucide-react'
 import { Key } from 'react'
 
@@ -22,8 +22,29 @@ type Props = {
 export default function HeroCarousel({ posts }: Props) {
   if (!posts || posts.length === 0) {
     return (
-      <div className="mt-40 flex h-64 items-center justify-center">
-        <ClipLoader size={60} color={'#123abc'} loading={true} />
+      <div className="mt-36 flex h-[500px] items-center justify-center">
+        <motion.div
+          style={{
+            width: '70px',
+            height: '70px',
+            borderRadius: '70%',
+            border: '7px solid #1189d0',
+            borderTopColor: 'transparent',
+            boxShadow:
+              '0 0 10px rgba(54, 215, 183, 0.8), inset 0 0 5px rgba(54, 215, 183, 0.5)',
+          }}
+          animate={{ rotate: 360 }}
+          transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+        />
+        {/* <ClipLoader
+          size={80}
+          color={'#1463e0'}
+          loading={true}
+          cssOverride={{
+            borderWidth: '8px',
+            boxShadow: '0 0 5px rgba(54, 215, 183, 0.2)',
+          }}
+        /> */}
       </div>
     )
   }

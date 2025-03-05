@@ -114,10 +114,10 @@ export default async function NewsPage({ searchParams }: NewsPageProps) {
           </div>
             : currentPosts.map((post: Post, index: number) => (
               <Card
-                className="bg-gray-100 overflow-hidden rounded-lg border-none shadow-xl hover:outline hover:outline-offset-2 hover:outline-blue-500"
+                className="bg-gray-900 overflow-hidden rounded-lg border-none shadow-xl hover:outline hover:outline-offset-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 hover:outline-blue-500"
                 key={index}
               >
-                <div className="relative h-48 w-full">
+                <div className="relative h-48 w-full ">
                   <Link href={`/blog/news/${post.fields.slug}`}>
                     <Image
                       src={post.fields.image ? `https:${post.fields.image.fields.file.url}` : '/fallback-image.jpg'}
@@ -125,15 +125,15 @@ export default async function NewsPage({ searchParams }: NewsPageProps) {
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       fill
                       style={{ objectFit: 'cover' }}
-                      className="rounded-t-lg"
+                      className="rounded-t-lg "
                     />
                   </Link>
                 </div>
                 <CardHeader>
-                  <CardTitle>{post.fields.title}</CardTitle>
+                  <CardTitle className='text-neutral-100'>{post.fields.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-slate-700">{post.fields.description}</CardDescription>
+                  <CardDescription className="text-neutral-300">{post.fields.description}</CardDescription>
                 </CardContent>
                 <CardFooter>
                   <Button variant="midas" size="midas" aria-label={`Leia mais sobre ${post.fields.title}`}>

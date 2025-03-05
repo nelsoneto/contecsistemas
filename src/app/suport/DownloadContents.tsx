@@ -177,7 +177,7 @@ export function DownloadContents() {
                   <p className="font-bold text-slate-800">Produtos.exe</p>
                 </Link>
               </span>
-              <span className="flex justify-between rounded-lg hover:bg-slate-200">
+              {/* <span className="flex justify-between rounded-lg hover:bg-slate-200">
                 <Link
                   href="download/utilitarios/ibexpert.exe"
                   download="ibexpert.exe"
@@ -186,7 +186,7 @@ export function DownloadContents() {
                   <Download />
                   <p className="font-bold text-slate-800">ibexpert</p>
                 </Link>
-              </span>
+              </span> */}
               <span className="flex justify-between rounded-lg hover:bg-slate-200">
                 <Link
                   href="download/utilitarios/IFB.exe"

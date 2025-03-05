@@ -39,10 +39,10 @@ export default async function NewPage({ params }: Props) {
     const { title, description, body, image } = post.fields
 
     return (
-      <section className="flex flex-col items-center min-h-screen justify-center">
-        <div className="mb-8 max-w-full flex-grow pt-36 text-pretty px-4 md:px-24 lg:px-44 xl:px-96">
-          <h1 className="mb-4 text-3xl font-bold xl:text-4xl">{title}</h1>
-          <h2 className="mb-4 text-pretty text-2xl">{description}</h2>
+      <section className="flex flex-col items-center min-h-screen justify-center bg-gray-900">
+        <div className="mb-8 max-w-full flex-grow pt-36 text-pretty px-4 md:px-24 lg:px-44 xl:px-96 text-neutral-300">
+          <h1 className="mb-4 text-3xl font-bold xl:text-4xl text-neutral-200">{title}</h1>
+          <h2 className="mb-4 text-pretty text-2xl text-neutral-300">{description}</h2>
           <h3 className="mb-4 flex items-center justify-center gap-2 text-nowrap text-justify text-sm lg:text-base">
             <CalendarIcon size={16} />
             {formattedDate}
@@ -58,7 +58,7 @@ export default async function NewPage({ params }: Props) {
           </div>
         </div>
 
-        <article className="3xl:px-[580px] prose-base mb-20 px-4 text-justify prose-headings:text-slate-200 prose-p:text-slate-300 prose-tr:text-blue-400 md:px-24 lg:px-44 xl:px-[400px]">
+        <article className="3xl:px-[580px] prose-base mb-20 px-4 text-justify prose-headings:text-neutral-200 prose-p:text-neutral-300 prose-tr:text-blue-400 md:px-24 lg:px-44 xl:px-[400px]">
           <RichText content={body} />
         </article>
       </section>
