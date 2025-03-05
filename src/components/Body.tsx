@@ -1,3 +1,5 @@
+'use client'
+import { motion } from 'framer-motion'
 import {
   BrickWall,
   Factory,
@@ -26,7 +28,12 @@ interface SolutionCardProps {
 
 // Componente para os cards de soluções
 const SolutionCard = ({ href, title, icon: Icon }: SolutionCardProps) => (
-  <div className="rounded-lg border-2 border-blue-400/10 px-10 py-8 shadow-md shadow-sky-800/50 transition-all duration-300 hover:border-2 hover:border-sky-500/70">
+  <motion.div
+    whileHover={{ scale: 1.2 }}
+    whileTap={{ scale: 0.6 }}
+    style={{ padding: '20px', cursor: 'pointer' }}
+    className="rounded-lg border-2 border-blue-400/10 px-10 py-8 shadow-md shadow-sky-800/50 transition-all duration-300 hover:border-2 hover:border-sky-500/70"
+  >
     <Link
       href={href}
       className="flex flex-col items-center justify-center gap-6"
@@ -34,7 +41,7 @@ const SolutionCard = ({ href, title, icon: Icon }: SolutionCardProps) => (
       {title}
       <Icon className="h-8 w-8 md:h-16 md:w-16" />
     </Link>
-  </div>
+  </motion.div>
 )
 
 // Componente para os cards de recursos
@@ -89,7 +96,7 @@ export function Body() {
   return (
     <div className="h-auto">
       {/* Seção de soluções */}
-      <div className="h-auto bg-slate-900 text-zinc-300">
+      <div className="h-auto bg-slate-950 text-zinc-300">
         <div className="flex h-full w-full flex-col items-center space-y-2 bg-pattern bg-center bg-no-repeat px-4 py-8 md:px-24 lg:px-44 xl:px-64 xl:py-10 2xl:px-64">
           <div className="flex flex-col gap-10 text-center font-alt md:px-10">
             <h1 className="text-2xl md:text-5xl">

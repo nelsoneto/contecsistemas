@@ -30,17 +30,18 @@ export default function SuportPage() {
         <title>Suporte | Contec</title>
         <meta name="description" content="Suporte Contecsistemas" />
       </Head>
-      <div className="mx-auto max-h-max w-full text-slate-300">
+      <div className="m-4 mx-auto w-full bg-slate-900 pt-36 text-slate-300">
         {/* Header Section */}
+
         <motion.header
-          className="mb-6 mt-36 flex h-40 w-full items-center justify-center gap-4 bg-gradient-to-r from-blue-900 via-sky-800 to-blue-900 py-4"
+          className="flex w-full items-center justify-center gap-4 py-4"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           {/* Título com gradiente */}
           <motion.h1
-            className="bg-gradient-to-r from-cyan-300 via-sky-200 to-blue-300 bg-clip-text px-1 font-alt text-3xl text-transparent md:text-5xl"
+            className="bg-gradient-to-r from-cyan-500 via-sky-300 to-blue-500 bg-clip-text px-1 font-alt text-3xl text-transparent md:text-5xl"
             variants={itemVariants}
           >
             Suporte técnico

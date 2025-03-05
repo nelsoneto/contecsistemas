@@ -9,7 +9,7 @@ import perguntasImg from '../../../public/images/perguntas2.jpg'
 
 export function PagePerguntas() {
   return (
-    <div className="w-full bg-slate-800">
+    <div className="w-full bg-slate-950">
       {/* Título */}
       <h2 className="flex w-auto justify-center pt-10 font-alt text-xl text-blue-400 sm:text-3xl">
         Perguntas Frequentes

@@ -84,6 +84,10 @@ export function Footer() {
         </div>
       </div>
 
+      {/* <div className="bg-slate-900 px-4">
+        <RevealLinks />
+      </div> */}
+
       {/* Copyright Section */}
       <div className="flex h-20 w-full items-center justify-center bg-slate-900 text-[12px] sm:text-sm">
         <p className="text-center">
