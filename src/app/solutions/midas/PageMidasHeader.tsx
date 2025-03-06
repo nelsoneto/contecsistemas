@@ -42,10 +42,14 @@ export function PageMidasHeader() {
             rápido, prático, eficiente e seguro
           </p>
 
+          {/* Buttons */}
           <div className="mt-10 flex w-full flex-col items-center justify-center">
             <div className="flex-row gap-4 space-y-4 sm:flex sm:space-y-0">
               <Link
-                href="download/midas/install/midas_222_firebird5_setup.exe"
+                href={'https://novo.contecsistemas.com.br/solutions/download/midas/install/midas_222_firebird5_setup.exe'.replace(
+                  '/solutions',
+                  '',
+                )}
                 download="midas_222_firebird5_setup.exe"
                 className="group relative inline-flex items-center justify-center overflow-hidden rounded-md p-4 px-5 py-3 font-medium text-sky-500 shadow-xl transition duration-300 ease-out hover:ring-1 hover:ring-sky-600"
               >
@@ -70,6 +74,7 @@ export function PageMidasHeader() {
               </Link>
             </div>
           </div>
+
           <div className="flex w-full items-center justify-center text-center">
             <ScrollLink
               to="modal-midas" // ID da seção para onde você quer rolar
