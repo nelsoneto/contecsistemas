@@ -24,7 +24,7 @@ const itemVariants = {
 export function DownloadContents() {
   return (
     <>
-      <div className="flex flex-col items-center justify-center py-10 text-2xl xl:px-64">
+      <div className="mb-8 flex flex-col items-center justify-center py-10 text-2xl xl:px-64">
         {/* Título com animação */}
         <motion.h1
           className="font-alt text-xl xl:text-3xl"
@@ -95,6 +95,16 @@ export function DownloadContents() {
               </span> */}
               <span className="flex justify-between rounded-lg px-5 hover:bg-slate-200">
                 <Link
+                  href="download/midas/install/midas_222_firebird5_setup.exe"
+                  download="midas_222_firebird5_setup.exe"
+                  className="flex gap-2 p-2"
+                >
+                  <MonitorDown className="" />
+                  <p className="font-bold text-slate-800">MIDAS 2.22 FB5.0</p>
+                </Link>
+              </span>
+              <span className="flex justify-between rounded-lg px-5 hover:bg-slate-200">
+                <Link
                   href="download/midas/install/midas_221_firebird5_setup.exe"
                   download="midas_221_firebird5_setup.exe"
                   className="flex gap-2 p-2"
@@ -111,16 +121,6 @@ export function DownloadContents() {
                 >
                   <MonitorDown className="" />
                   <p className="font-bold text-slate-800">MIDAS 2.21 FB2.5</p>
-                </Link>
-              </span>
-              <span className="flex justify-between rounded-lg px-5 hover:bg-slate-200">
-                <Link
-                  href="download/midas/install/midas_222_firebird5_setup.exe"
-                  download="midas_222_firebird5_setup.exe"
-                  className="flex gap-2 p-2"
-                >
-                  <MonitorDown className="" />
-                  <p className="font-bold text-slate-800">MIDAS 2.22 FB5.0</p>
                 </Link>
               </span>
             </div>

@@ -3,10 +3,13 @@ import midasIcon from '@/public/images/midas-icone.png'
 import midasComprovante from '@/public/images/midas_comprovante.png'
 import midasTelaPrincipal from '@/public/images/midas_tela_principal.png'
 import midasTelaVedas from '@/public/images/midas_tela_vendas.png'
+import { ChevronDown } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useState } from 'react'
 import Lightbox from 'react-image-lightbox'
 import 'react-image-lightbox/style.css'
+import { Link as ScrollLink } from 'react-scroll'
 
 export function PageMidasHeader() {
   const [isOpen, setIsOpen] = useState(false)
@@ -19,62 +22,70 @@ export function PageMidasHeader() {
   ]
 
   return (
-    <section className="mx-4 flex flex-col items-center rounded-md bg-slate-900">
+    <section className="mx-4 mb-10 flex h-auto flex-col items-center rounded-md bg-slate-900 xl:h-screen">
       {/* Header Section */}
-      <header className="pb-38 mb-10 flex h-auto w-full flex-col items-center justify-center gap-4 pt-44">
-        <div className="flex items-center gap-4">
-          <Image
-            src={midasIcon}
-            alt="Ícone do Sistema Midas"
-            className="h-10 w-10 drop-shadow-md md:h-12 md:w-12"
-            quality={80}
-            priority
-          />
-          <h1 className="bg-gradient-to-r from-cyan-500 via-sky-300 to-blue-500 bg-clip-text px-1 font-alt text-4xl text-transparent md:text-6xl">
+      <header className="flex h-auto w-full flex-col items-center justify-center gap-8 pt-40 2xl:pt-48">
+        {/* Feature Banner */}
+        <div className="flex items-center justify-center rounded-full border border-neutral-400 border-b-white bg-gray-900 px-2">
+          <h1 className="bg-gradient-to-r from-cyan-500 via-sky-300 to-blue-500 bg-clip-text px-1 font-alt text-transparent">
             MIDAS
           </h1>
+          <p className="flex items-center justify-center">2.22 Disponível 🎉</p>
         </div>
-        {/* Feature Banner */}
-        <div className="mb-10 w-full p-6 md:py-12 xl:px-72">
-          <p className="text-center font-alt text-3xl leading-relaxed text-slate-300 xl:text-4xl">
+        <div className="mb-10 w-full space-y-8 px-4 md:px-14 lg:px-48 xl:px-60">
+          <h1 className="text-center font-alt text-3xl leading-relaxed text-slate-100 sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl">
+            Potencialize sua eficiência operacional e maximize a produtividade
+            com o sistema MIDAS.
+          </h1>
+          <p className="px-4 text-center font-sans text-lg text-gray-400 md:px-9 lg:px-16 xl:px-36 xl:text-xl">
             Simples de operar, transformando vendas de balcão em um atendimento
-            <span className="block bg-gradient-to-r from-cyan-500 via-sky-300 to-blue-500 bg-clip-text font-bold text-transparent">
-              rápido, prático, eficiente e seguro
-            </span>
+            rápido, prático, eficiente e seguro
           </p>
+
+          <div className="mt-10 flex w-full flex-col items-center justify-center">
+            <div className="flex-row gap-4 space-y-4 sm:flex sm:space-y-0">
+              <Link
+                href="download/midas/install/midas_222_firebird5_setup.exe"
+                download="midas_222_firebird5_setup.exe"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-md p-4 px-5 py-3 font-medium text-sky-500 shadow-xl transition duration-300 ease-out hover:ring-1 hover:ring-sky-600"
+              >
+                <span className="absolute inset-0 h-full w-full bg-gradient-to-br from-blue-500 via-blue-600 to-teal-600"></span>
+                <span className="ease absolute bottom-0 right-0 mb-32 mr-4 block h-64 w-64 origin-bottom-left translate-x-24 rotate-45 transform rounded-full bg-teal-500 opacity-30 transition duration-500 group-hover:rotate-90"></span>
+                <span className="relative flex gap-2 text-white">
+                  Teste agora
+                  <Image
+                    src={midasIcon}
+                    alt="Ícone do Sistema Midas"
+                    className="h-[22px] w-[22px] drop-shadow-md"
+                    quality={80}
+                    priority
+                  />
+                </span>
+              </Link>
+              <Link
+                href="https://wa.me/message/EPNTUZEZZV3UC1"
+                className="flex items-center justify-center overflow-hidden rounded-md bg-gray-900 px-8 py-3 font-sans transition delay-150 hover:bg-gray-800"
+              >
+                <span className="font-bold">Fale conosco</span>
+              </Link>
+            </div>
+          </div>
+          <div className="flex w-full items-center justify-center text-center">
+            <ScrollLink
+              to="modal-midas" // ID da seção para onde você quer rolar
+              smooth={true}
+              duration={500}
+              offset={-50}
+              className="cursor-pointer"
+            >
+              <ChevronDown
+                className="h-12 w-12 rotate-180 animate-bounce rounded-full p-2 text-sky-500"
+                strokeWidth={3}
+              />
+            </ScrollLink>
+          </div>
         </div>
       </header>
-      {/* Main Content */}
-      <div className="relative w-full">
-        {/* <div className="flex-row justify-items-center gap-4 space-y-4 p-10 md:flex md:items-center md:justify-center">
-          {images.map((src, index) => (
-            <div key={index} className="relative">
-              <Image
-                src={src}
-                alt={`Interface do Sistema MIDAS ${index + 1}`}
-                width={400}
-                height={400}
-                className="border-spacing-8 cursor-pointer rounded-md object-cover object-center"
-                sizes="(max-width: 768px) 100vw, 50vw"
-                onClick={() => {
-                  setPhotoIndex(index)
-                  setIsOpen(true)
-                }}
-              />
-            </div>
-          ))}
-        </div> */}
-
-        {/* Feature Banner */}
-        {/* <div className="mb-10 w-full p-6 md:py-12 xl:px-72">
-          <p className="text-center font-alt text-3xl leading-relaxed text-slate-300 xl:text-4xl">
-            Simples de operar, transformando vendas de balcão em um atendimento
-            <span className="block bg-gradient-to-r from-cyan-500 via-sky-300 to-blue-500 bg-clip-text font-bold text-transparent">
-              rápido, prático, eficiente e seguro
-            </span>
-          </p>
-        </div> */}
-      </div>
 
       {isOpen && (
         <Lightbox

@@ -24,7 +24,10 @@ export const MidasModal = () => {
   )
 
   return (
-    <div className="grid place-content-center bg-neutral-950 py-10">
+    <div
+      id="modal-midas"
+      className="grid place-content-center bg-neutral-950 py-10"
+    >
       <h2 className="pb-10 text-center font-alt text-3xl xl:text-4xl">
         Conheça as funcionalidades do{' '}
         <span className="text-blue-400">MIDAS</span>
@@ -44,7 +47,7 @@ export const MidasModal = () => {
             }}
             whileHover={{ backgroundColor: '#1d4ed8' }} // Azul mais escuro
             whileTap={{ backgroundColor: '#1e40af' }} // Azul ainda mais escuro
-            className="w-full rounded-md bg-blue-500 px-8 py-3 font-medium text-white shadow-[3px_3px_0px_white] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
+            className="w-full rounded-md bg-blue-500 px-8 py-3 font-medium text-white shadow-[3px_3px_0px_#404040] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
           >
             {tab.title}
           </motion.button>
