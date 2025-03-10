@@ -5,6 +5,7 @@ import {
   useDragControls,
   useMotionValue,
 } from 'framer-motion'
+import { X } from 'lucide-react'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import Lightbox from 'react-image-lightbox'
@@ -175,17 +176,22 @@ const DragCloseDrawer = ({ open, setOpen, children }: DragCloseDrawerProps) => {
               bottom: 0.5,
             }}
           >
-            <div className="absolute left-0 right-0 top-0 z-10 flex justify-center bg-neutral-900 p-4">
-              <button
-                onPointerDown={(e) => {
-                  controls.start(e)
-                }}
-                className="h-4 w-20 cursor-grab touch-none rounded-full bg-neutral-700 active:cursor-grabbing"
-                title="Drag handle"
-                aria-label="Drag handle"
-              ></button>
+            <div className="absolute left-0 right-0 top-0 z-10 flex justify-center bg-neutral-900 p-2">
+              <div className="flex w-full items-center justify-center">
+                <button
+                  onPointerDown={(e) => {
+                    controls.start(e)
+                  }}
+                  className="h-4 w-24 cursor-grab touch-none rounded-xl bg-neutral-800 active:cursor-grabbing"
+                  title="Drag handle"
+                  aria-label="Drag handle"
+                ></button>
+              </div>
+              <button onClick={handleClose} className="text-neutral-300">
+                <X size={28} />
+              </button>
             </div>
-            <div className="relative z-0 h-full overflow-y-scroll p-4 pt-12">
+            <div className="relative z-0 h-full overflow-y-scroll p-4 pt-10">
               {children}
             </div>
           </motion.div>
