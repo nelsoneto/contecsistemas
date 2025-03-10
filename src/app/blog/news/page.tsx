@@ -106,16 +106,16 @@ export default async function NewsPage({ searchParams }: NewsPageProps) {
           </h1>
           <CategoriesMenu />
         </div>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {!currentPosts ? <div>
-            <h1 className="text-primary mb-10 text-center text-3xl font-bold tracking-tight md:text-4xl">
-              Nenhuma noticia encontrada.
-            </h1>
-          </div>
-            : currentPosts.map((post: Post, index: number) => (
+
+        {currentPosts.length === 0 ? <div className='flex justify-center w-full items-center h-[600px]'>
+          <h1 className="text-primary mb-10 text-center text-lg font-bold tracking-tight md:text-3xl">
+            Nenhuma noticia encontrada.
+          </h1>
+        </div>
+          : currentPosts.map((post: Post) => (
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3" key={post.sys.id}>
               <Card
                 className="bg-gray-900 overflow-hidden rounded-lg border-none shadow-xl hover:outline hover:outline-offset-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 hover:outline-blue-500"
-                key={index}
               >
                 <div className="relative h-48 w-full ">
                   <Link href={`/blog/news/${post.fields.slug}`}>
@@ -141,8 +141,9 @@ export default async function NewsPage({ searchParams }: NewsPageProps) {
                   </Button>
                 </CardFooter>
               </Card>
-            ))}
-        </div>
+            </div>
+          ))}
+
 
         {/* Paginação */}
         <Pagination className="mt-10">

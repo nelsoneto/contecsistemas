@@ -6,7 +6,7 @@ import {
   useMotionValue,
 } from 'framer-motion'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Lightbox from 'react-image-lightbox'
 import 'react-image-lightbox/style.css'
 import useMeasure from 'react-use-measure'
@@ -24,11 +24,8 @@ export const MidasModal = () => {
   )
 
   return (
-    <div
-      id="modal-midas"
-      className="grid place-content-center bg-neutral-950 py-10"
-    >
-      <h2 className="pb-10 text-center font-alt text-3xl xl:text-4xl">
+    <div id="modal-midas" className="grid place-content-center py-10">
+      <h2 className="px-4 pb-10 text-center font-alt text-3xl xl:text-4xl">
         Conheça as funcionalidades do{' '}
         <span className="text-blue-400">MIDAS</span>
       </h2>
@@ -112,6 +109,20 @@ const DragCloseDrawer = ({ open, setOpen, children }: DragCloseDrawerProps) => {
 
   const y = useMotionValue(0)
   const controls = useDragControls()
+
+  useEffect(() => {
+    if (open) {
+      document.body.classList.add('overflow-hidden')
+    } else {
+      document.body.classList.remove('overflow-hidden')
+    }
+
+    // Cleanup function to remove the class when the component unmounts
+    return () => {
+      document.body.classList.remove('overflow-hidden')
+    }
+  }, [open])
+
   const handleClose = async () => {
     animate(scope.current, {
       opacity: [1, 0],
@@ -169,7 +180,7 @@ const DragCloseDrawer = ({ open, setOpen, children }: DragCloseDrawerProps) => {
                 onPointerDown={(e) => {
                   controls.start(e)
                 }}
-                className="h-2 w-14 cursor-grab touch-none rounded-full bg-neutral-700 active:cursor-grabbing"
+                className="h-4 w-20 cursor-grab touch-none rounded-full bg-neutral-700 active:cursor-grabbing"
                 title="Drag handle"
                 aria-label="Drag handle"
               ></button>

@@ -31,7 +31,7 @@ export function Hero() {
           </p>
           <Link
             href="/solutions/midas"
-            className="rounded-lg bg-blue-600 px-8 py-4 text-center text-xl text-zinc-100 transition-colors hover:bg-blue-800"
+            className="rounded-lg bg-blue-700 px-8 py-4 text-center text-xl text-zinc-100 transition-colors hover:bg-blue-800"
           >
             Saiba mais
           </Link>

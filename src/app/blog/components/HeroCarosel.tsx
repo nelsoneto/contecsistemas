@@ -13,29 +13,62 @@ import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
 import { motion } from 'framer-motion'
 import { CalendarIcon } from 'lucide-react'
-import { Key } from 'react'
+import { Key, useEffect, useState } from 'react'
 
 type Props = {
   posts: Post[]
 }
 
 export default function HeroCarousel({ posts }: Props) {
+  const [isLoading, setIsLoading] = useState(true)
+  const [isTakingLong, setIsTakingLong] = useState(false)
+
+  // Tempo de carregamento dos dados
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 5000)
+
+    const longLoadTimer = setTimeout(() => {
+      setIsTakingLong(true)
+    }, 3000) // Define um tempo limite de 5 seg para exibição da msg de demora
+
+    return () => {
+      clearTimeout(timer)
+      clearTimeout(longLoadTimer)
+    }
+  }, [])
+
   if (!posts || posts.length === 0) {
     return (
       <div className="mt-36 flex h-[500px] items-center justify-center">
-        <motion.div
-          style={{
-            width: '70px',
-            height: '70px',
-            borderRadius: '70%',
-            border: '7px solid #1189d0',
-            borderTopColor: 'transparent',
-            boxShadow:
-              '0 0 10px rgba(54, 215, 183, 0.8), inset 0 0 5px rgba(54, 215, 183, 0.5)',
-          }}
-          animate={{ rotate: 360 }}
-          transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-        />
+        {isLoading ? (
+          <div className="flex-row items-center justify-center justify-items-center gap-8 space-y-8">
+            <motion.div
+              style={{
+                width: '50px',
+                height: '50px',
+                borderRadius: '50%',
+                border: '7px solid #1189d0',
+                borderTopColor: 'transparent',
+                boxShadow:
+                  '0 0 10px rgba(54, 215, 183, 0.8), inset 0 0 5px rgba(54, 215, 183, 0.5)',
+              }}
+              animate={{ rotate: 360 }}
+              transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+            />
+            {isTakingLong && (
+              <p className="text-center text-lg font-bold text-slate-300 md:text-3xl">
+                O carregamento está demorando mais do que o esperado..😕
+              </p>
+            )}
+          </div>
+        ) : (
+          <p className="mt-4 text-pretty text-center text-lg font-bold text-slate-300 md:text-3xl">
+            Nenhum post disponível no momento 😅
+          </p>
+        )}
+
         {/* <ClipLoader
           size={80}
           color={'#1463e0'}

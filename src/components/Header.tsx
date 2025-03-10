@@ -38,7 +38,7 @@ export function Header() {
             <div className="flex justify-start">
               <Link
                 href="/solutions/midas"
-                className="rounded-lg bg-blue-600 px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/30 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+                className="rounded-lg bg-blue-700 px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-blue-800 hover:shadow-lg hover:shadow-blue-600/30 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
                 role="button"
                 aria-label="Saiba mais sobre o sistema inteligente"
               >
