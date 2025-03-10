@@ -187,7 +187,11 @@ const DragCloseDrawer = ({ open, setOpen, children }: DragCloseDrawerProps) => {
                   aria-label="Drag handle"
                 ></button>
               </div>
-              <button onClick={handleClose} className="text-neutral-300">
+              <button
+                onClick={handleClose}
+                className="text-neutral-300"
+                title="Close"
+              >
                 <X size={28} />
               </button>
             </div>
